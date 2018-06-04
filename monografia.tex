@@ -4,7 +4,7 @@
 
 % Opções:
 %  - Graduação: bacharelado|engenharia|licenciatura
-%  - Pós-graduação: [qualificacao], mestrado|doutorado, ppca|ppginf
+%  - Pós-graduação: qualificacao, mestrado, ppca
 
 % \documentclass[engenharia]{UnB-CIC}%
 \documentclass[qualificacao,mestrado,ppca]{UnB-CIC}%
@@ -17,30 +17,34 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \orientador{\prof \dr Guilherme Novaes Ramos}{CIC/UnB}%
 %\coorientador{\prof \dr José Ralha}{CIC/UnB}
-\coordenador[a]{\prof[a] \dr[a] Ada Lovelace}{Bibliothèque universelle de Genève}%
-\diamesano{24}{dezembro}{2014}%
+\coordenador{\prof \dr Rômulo Soares Valentini}{Fundação Pedro Leopoldo/MG \gnramos{ainda não foi processado o pedido de coorientação,a coordenadora é a profa Aletéia}}%
+\diamesano{07}{maio}{2018}%
 
-\membrobanca{\prof \dr Donald Knuth}{Stanford University}%
-\membrobanca{\dr Leslie Lamport}{Microsoft Research}%
+\membrobanca{\prof \dr Guilherme N. Ramos}{Univerdidade de Brasília}%
+\membrobanca{\dr  Rômulo Soares Valentini}{Fundação Pedro Leopoldo/MG}%
 
-\autor{Guilherme N.}{Ramos}%
+\autor{Ana Carolina Pereira}{Rocha Martins}%
 
-\titulo{UnB-CIC: Uma classe em LaTeX para textos do Departamento de Ciência da Computação}%
+\titulo{Estudo da aplicação de técnicas de mineração de textos para classificação multirrótulo de processos judiciais trabalhistas}%
 
-\palavraschave{LaTeX, metodologia científica, trabalho de conclusão de curso}%
-\keywords{LaTeX, scientific method, thesis}%
+\palavraschave{dissertação, ppca, justiça do trabalho, processo judicial eletrônico, pje, assunto, tema, classificação de textos, mineração de textos, gerador de classificador}%
+\keywords{labour court, eletronic judicial process, classifier, classifier generator, text classification, text mining}%
 
 \newcommand{\unbcic}{\texttt{UnB-CIC}}%
+\newcommand{\gnramos}[1]{\textcolor{blue}{\textbf{#1}}}%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Texto
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}%
     \capitulo{1_Introducao}{Introdução}%
-    \capitulo{2_UnB-CIC}{A Classe \unbcic}%
-    \capitulo{3_TCC}{Trabalho de Conclusão de Curso}%
-    \capitulo{4_Apresentacao}{Apresentações}%
+    \capitulo{2_TrabalhosRelacionados}{Trabalhos Relacionados}%
+    \capitulo{3_ReferencialTeorico}{Referencial Teórico}%
+    \capitulo{4_Resultados}{Resultados}%
+    \capitulo{5_Cronograma}{Cronograma}%
+    
 
-    \apendice{Apendice_Fichamento}{Fichamento de Artigo Científico}%
-    \anexo{Anexo1}{Documentação Original \unbcic\ (parcial)}%
+
+	\gnramos{não incluir isso na qualificação. pode ser mostrado na apresentação.}
+    \apendice{TAP}{Termo de Abertura de Projeto}%
 \end{document}%

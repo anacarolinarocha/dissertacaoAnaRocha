@@ -111,6 +111,10 @@
 \ProcessOptionsX\relax
 
 \newcommand{\ifhyperref}[2]{\if@ForScreenView #1\else #2\fi}
+\newcommand\myworries[1]{\textcolor{red}{#1}}
+%descomentar a linha abaixo para esconder os comentários
+%\renewcommand\myworries[1]{}
+%https://tex.stackexchange.com/questions/9796/how-to-add-todo-notes
 
 %define macro apenas se estiver indefinida
 \def\@defifundef#1#2{\begingroup\expandafter\ifx\csname #1\endcsname\relax%

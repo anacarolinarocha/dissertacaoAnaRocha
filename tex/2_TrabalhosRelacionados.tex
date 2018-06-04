@@ -1,0 +1,74 @@
+\newcommand{\texCommand}[1]{\texttt{\textbackslash{#1}}}%
+
+\newcommand{\exemplo}[1]{%
+\vspace{\baselineskip}%
+\noindent\fbox{\begin{minipage}{\textwidth}#1\end{minipage}}%
+\\\vspace{\baselineskip}}%
+
+\newcommand{\exemploVerbatim}[1]{%
+\vspace{\baselineskip}%
+\noindent\fbox{\begin{minipage}{\textwidth}%
+#1\end{minipage}}%
+\\\vspace{\baselineskip}}%
+
+Esta revisão da literatura busca encontrar trabalhos onde se tenha trabalhado com a classificação de textos. Buscou-se sobretudo trabalhos que abordaram com a língua portuguesa, no contexto de documentos jurídicos, e que tenham apresentado um problema de classificação multi-label, embora alguma dessas premissas tenham sido relaxadas para alguns trabalhos citados..
+
+%CLASIFICAÇÃO JURIDICA PORTUGUES
+No trabalho realizado por um servidor do Tribunal Regional do Trabalho (TRT) da 2ª Região \cite{ferauche}, a partir da extração das informações relevantes dos textos das ementas jurisprudenciais e de um técnica de aprendizado supervisionado,  buscou-se criar uma inteligência capaz de classificar ementas jurisprudenciais de acordo com uma das categorias existentes. Os algoritmos J4.8, Naïve Bayes e SMO foram combinados em um ensemble, ou seja, um grupo de algoritmos que fazem uma votação da classe de cada documento, e vence a classe com maior número de votos. Notou-se que o desempenho de cada algoritmo é bastante dependente da categoria, apresentando elevadas taxas de erro em determinadas categorias, e em outras não. Considerando a acurácia média dentre todas as categorias, tem-se que o J4.8 apresentou o valor 88,6\% e o ensemble 0,848. Neste trabalho utilizou-se a ferramenta Weka.
+
+Outro trabalho que envolveu a categorização de documentos dentro da JT se encontra em \cite{ticom_aplicacao_2007}. Neste estudo, analisou-se 104 sentenças e acórdãos que trataram de 4 assuntos diferentes. Foram removidas as \textit{stopwords}, e fez-se stemização nas palavras. Utilizou-se os softwares Text-Miner Software Kit (TMSK) e Rule Induction Kit fot Text (RIKTEXT) para a geração dos modelos de classificação a partir de algoritmos de modelo linear, Naïve Bayes e regras de decisão. O modelo linear apresentou os melhores resultados, com a métrica \textit{F-Measure} variando  entre 86,88\% e 95,82\% entre os diferentes assuntos.
+
+\myworries{//DUVIDA: nomes próprios em inglês eu não estou colocando em itálico, tudo bem?}
+
+%CLASIFICAÇÃO JURIDICA
+Em \cite{chinese}, os autores fizeram uso de técnicas de mineração de texto para classificarem documentos jurídicos chineses. Fez-se uso de um conjunto de 6735 textos jurídicos previamente classificados. Destes textos, extraiu-se apenas a seção que é interessante para o objetivo da classificação, e depois aplicou-se técnicas de pré-processamento de texto. Importante notar que além da lista de \textit{stopwords} chinesa comum, os autores construíram uma lista de \textit{stopwords} jurídicas, que eram muito frequentes e pouco relevantes para a tarefa de classificação. As \textit{features} foram representadas por meio e vetores TF-IDF, e para a redução da dimensionalidade  aplicou-se os métodos PCA e SVD (truncado). Foram utilizados os algoritmos Naïve Bayes, Árvores de Decisão, Random Forest and Support Vector Machine (SVM) para a tarefa de classificação, e eles foram comparados por meio das métricas de acurácia, precisão ,\textit{recall} e \textit{F-Measure}. O melhor resultado foi do SVM, com métrica \textit{F-Measure} de 87\%.
+
+Em \cite{european_court}, executou-se um trabalho de predizer a decisão de um juiz para um determinado processo na Corte Europeia de Direitos Humanos. Este trabalho fez uma classificação binária, onde a entrada é o texto com a problemática do processo e o resultado esperado é a suposta decisão do juiz. Este trabalho usou documentos escritos em inglês, e fez uso de técnicas de processamento de linguagem natural, N-Grams e tópicos para montar o modelo preditivo baseado no SVM. Ao final do trabalho executado, chegou-se a um modelo com de acurácia de 79\% (valor considerado forte neste tipo de caso). O fator de maior relevância para a decisão se mostrou ser os fatos formais.
+
+
+%CLASSIFICACAO JURIDICA MULTICLASSE PORTUGUES
+%\cite{goncalves_is_2005} %ja escrevi sobre
+
+%CLASSIFICACAO JURIDICA MULTICLASSE
+%\cite{de_maat_machine_2010} 
+%\cite{chinese} %ja escrevi sobre
+
+%CLASSIFICACAO JURIDICA MULTILABEL PORTUGUES
+
+%CLASSIFICACAO JURIDICA MULTILABEL
+%\cite{mencia_efficient_2008}
+
+%ADICIONOU STOPWORD
+%\cite{ladeirahuffman}
+
+%CLASSIFICAÇÃO DE TEXTO GERAL MULTILABEL
+%\cite{ladeirahuffman}
+
+
+
+%CLASSIFICAÇÃO DE TEXTO
+
+No trabalho do \cite{tripadivisor}, abordou-se o problema de e ter uma base de dados com registros previamente categorizados, onde há erro de cadastro das categorias. Tinha-se disponível uma base de dados com revisões de usuários sobre hotéis do sítio da TripAdivisor.Identificou-se que um conjunto das revisões pudesse estar errado. Assim, buscou-se encontrar um centróide baseado no TD-IDF que representasse cada uma das classes, e fez-se uma polarização dos textos de forma a eliminar o ruído calculando-se a distância do centroide de cada registro. Depois, fez-se testes com diferentes tamanhos de conjuntos de treinamento. Quanto menor o conjunto, mais proximos os dados do centroide, menos ruído. Dessa forma, conseguiu-se criar um conjunto de dados confiável para treinamento, e os resultados finals foram melhorados. Com um conjunto de 400 mil registros para treinamento, a métrica \textit{F-Measure }chegou a 90\%. Qunado se aumenta esse conjunto para 800 mil, inserindo-se dados ruidoses, esse valor cai para 77\%. Maiores informações sobre a redução de ruídos em um conjunto de dados pode ser encontradas na pesquisa consolidada no estudo \cite{mislabeled_survey} e em outros trabalhos relacionados (\cite{liu_preprocessing_2017}, \cite{svmop}).
+
+
+
+Outro trabalho relevante abordou o problema de se ter uma elevada quantidade de categorias possíveis dentro de um problema de classificação. No estudo realizado em ~\cite{oliveira_intelligent_nodate} trata-se da categorização da atividade econômica de empresas de acordo com o código CNAE . Neste trabalho, utilizou-se 3281 descrições com aproximadamente 70 palavras cada, com o objetivo de encontrar qual dos 765 códigos da tabela CNAE representa a atividade econômica da empresa. Foram criados dois modelos, um do medelo de espaço vetorial considerando a distância do cosseno, semelhante ao KNN, e outro com uma rede neural (Virtual  Generalizing RAM Weightless Neural Network). No primeiro obteve-se acurácea de 63.36\% e no segundo 67.03\%.
+%OUTROS TRABALHOS QUE FALARAM DESTE PROBLEMA DA ELEVADA QUANTIDADE DE CATEGORIAS POSSÍVEIS....
+\cite{mencia_efficient_2008}
+
+\myworries{//TODO: buscar resultados com word embeddings}
+
+\myworries{//TODO: buscar mais exemplos que envolvam a classificação multilabel}
+%CLASSIFICAÇÃO DE TEXTO / REDUÇÃO DA DIMENSIONALIDADE
+
+Alguns são os trabalhos que investigaram diferentes formas de redução da dimensionalidade dos vetores de texto. Em \cite{goncalves_is_2005}, apresentou-se um problema de classificação multirrótulo com 801 rótulos possíveis. O conjunto de dados era composto de 8151 documentos da Procuradoria Geral de Portugal. Aplicando-se apenas o algoritmo SVM, variou-se a forma como foram filtradas e selecionas as palavras, e analisou-se o impacto da utilização de técnicas de análise sintática do texto. Verificou-se que é possível reduzir significativamente a dimensão dos vetores escolhendo um conjunto de classes sintáticas sem que haja degradação das métricas, conseguindo-se otimização no tempo de execução. 
+
+Outro trabalho que aborda este tema se encontra em \cite{ciarelli_agglomeration_2009}. Neste trabalho, analisa-se diferentes formas de redução da dimensionalidade, abordando métodos que analisam apenas a frequência das palavras e outros que tentam agrupar palavras. Foram utilizados 4 datasets diferentes, cuja quantidade de palavras variou entre 856 e 3000, e a quantidade de categorias variou entre 9 e 52. Para a classificação, utilizou-se o KNN. Analisando-se o conjunto de dados com maior número de categorias, avaliando-se o custo-benefício de cada algoritmos, tem-se que o método de Informação Mútua (MI) (considerando a probabilidade de cada palavra) e Latent Semantic Indexing (LSI) apresentam os melhores resultados a partir de dimensões de tamanho 100.
+
+%OUTROS ALGORITMOS
+Considerando a dificuldade do trabalho apresentado, uma vez que trabalha com termos específicos do jargão jurídico, documentos com elevada quantidade de informação e um elevado número de categorias, vale citar trabalhos que tiveram resultados de baixo desempenho com os algoritmos convencionais. Nesse sentido, pode-se citar \cite{ladeirahuffman}, onde buscou-se classificar denúncias realizadas na Controladoria Geral da União. Foram testados os algorítimos SVM, Random Forest, Naïve Bayes e Árvore de decisão (C4.5). Esses algoritmos não se mostraram escaláveis à medida que se aumentava a quantidade de classes, e apresentaram desempenho abaixo do esperado, chegando a um máximo de 0.59 de precisão com o SVM. Assim, resolveu-se abordar o problema como uma classificação multirrótulo, aumentando as chances de acerto do classificador. Buscando-se resolver a questão da escalabilidade, o modelo de classificação foi criado com uma combinação da Codificação Adaptativa de Huffman com a Descrição de Comprimento Mínimo (CAH+MDL). Em 28, mostrou-se que esse algorítimo um \textit{recall} maior que o SVM, mas uma precisão menor. Com a abordagem multirrótulo e o CAH-MDL, somados a um pré-processamento de texto que proporcionou maior redução da dimensionalidade, conseguiu-se uma precisão de 84\%.
+
+\myworries{//DUVIDA: aqui estou citando um trabalho orientado pelo Ladeira e Rommel, mas como é uma dissertação, coloquei so o nome da aluna. Ta certo isso?}
+
+%CONCLUSAO
+De maneira geral, dentre os trabalhos encontrados, nota-se que o desempenho dos algoritmos varia em cada classe (\cite{de_maat_machine_2010},\cite{goncalves_is_2005}), ou seja, para um mesmo conjunto de documentos, a taxa de erro é pequena em algumas classes e grande em outras, seja por uma dificuldade inerente ao contexto, ou por haver um dataset desbalanceado. Dentre os algoritmos utilizados, o que apresentou melhor desempenho foi o SVM. Obtiveram-se bons resultados aplicando técnicas de redução de dimensionalidade.

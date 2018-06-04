@@ -1,3 +1,547 @@
+@article{oliveira_intelligent_nodate,
+	title = {Intelligent {Classification} of {Economic} {Activities} from {Free} {Text} {Descriptions}},
+	abstract = {We tackle the problem of automating the categorization of economic activities from business descriptions in free text format. This kind of information is vital to fundamental aspects of national governmental administration such as short, medium and long term planning and taxation. As the number of possible categories considered is very large (more than 1000 in the Brazilian scenario), the automatic text categorization problem targeted here is quite challenging. We have applied and compared the use of two different techniques to deal with it: the Vector Space Model in its classical form to represent the texts, and VG-RAM, a Weightless Neural Network.},
+	author = {Oliveira, Elias and Ciarelli, Patrick Marques and Henrique, Wallace F and Veronese, Lucas and Pedroni, Felipe and Souza, Alberto F De}
+}
+
+
+@inproceedings{ciarelli_agglomeration_2009,
+	title = {Agglomeration and {Elimination} of {Terms} for {Dimensionality} {Reduction}},
+	isbn = {978-1-4244-4735-0},
+	url = {http://ieeexplore.ieee.org/document/5364970/},
+	doi = {10.1109/ISDA.2009.9},
+	abstract = {The vector space model is the usual representation of texts database for computational treatment. However, in such representation synonyms and/or related terms are treated as independent. Furthermore, there are some terms that do not add any information at all to the set of text documents, on the contrary they even might harm the performance of the information retrieval techniques. In an attempt to reduce this problem, some techniques have been proposed in the literature. In this work we present a method to tackle this problem. In order to validate our approach, we carried out a serie of experiments on four databases and we compare the achieved results with other well known techniques. The evaluation results is such that our method obtained in all cases a better or equal performance compared to the other literature techniques.},
+	urldate = {2018-06-03},
+	publisher = {IEEE},
+	author = {Ciarelli, Patrick Marques and Oliveira, Elias},
+	year = {2009},
+	pages = {547--552}
+}
+
+@inproceedings{svmop,
+	title = {Augmented {SVM} with ordinal partitioning for text classification},
+	doi = {10.1145/3106426.3109428},
+	abstract = {Ordinal regression has received increasing interest in the past years. It aims to classify pa erns by an ordinal scale. With the the explosive growth of data, the method of SVM with ordinal partitioning called SVMOP highlights its advantages due to its convenience of dealing with large scale data. However, the method of SVMOP for ordinal regression has not been exploited much. As we know, the costs should be di erent when dealing with mislabeled samples and how to use them plays a dominant role in model building. However, L2-loss which could enlarge the cost sensitivity has not been applied into SVM ordinal partition yet. In this paper, we propose the method of SVMOP with L2-loss for ordinal regression. Numerical results show that our approach outperforms the method of SVMOP with L1-loss and other ordianl regression models.},
+	urldate = {2018-06-04},
+	publisher = {ACM Press},
+	author = {Shi, Yong and Li, Peijia and Niu, Lingfeng},
+	year = {2017},
+	pages = {959--962}
+}
+
+
+@inproceedings{liu_preprocessing_2017,
+	title = {A preprocessing method of {AdaBoost} for mislabeled data classification},
+	doi = {10.1109/CCDC.2017.7978978},
+	abstract = {AdaBoost is one of the most popular algorithm for classification and has been successfully used for text classification, face detection and tracking. However noise sensitivity is regarded as a major disadvantage and previous works show that AdaBoost will be overfitting when dealing with the data sets with noisy data. To improve the noise tolerance of conventional AdaBoost, this paper proposed a preprocessing method of AdaBoost for mislabeled data to find the noisy data and correct it. Further decision stump is selected as the weak learner of the AdaBoost algorithm for classification. The comparison of simulation results between conventional AdaBoost and the method proposed in this paper shows that the proposed algorithm has improved testing accuracy of the data sets with the noisy data.},
+	booktitle = {2017 29th {Chinese} {Control} {And} {Decision} {Conference} ({CCDC})},
+	author = {Liu, X. and Dai, Y. and Zhang, Y. and Yuan, Q. and Zhao, L.},
+	month = may,
+	year = {2017},
+	pages = {2738--2742}
+}
+@article{mislabeled_survey,
+	title = {A {Survey} of mislabeled training data detection techniques for pattern classification},
+	volume = {30},
+	doi = {10.4103/0256-4602.125689},
+	abstract = {Pattern classification is an important part of machine learning. To use it, a classifier is trained on the training data and then predicts the label for the future unseen data. To obtain a classifier with good performance, the quality of the training data plays an important role. Unfortunately in many areas, it is difficult to provide absolutely clean data. This paper focuses on mislabeled data, which is one of the main types of noisy data. A number of mislabeled data detection techniques have been proposed; however, there is no survey work to summarize those techniques. This paper reviews the existing studies and classifies them into three types: Local learning-based, ensemble learning-based, and single learning-based methods. The technical details, advantages, and disadvantages of these methods are discussed.},
+	journal = {IETE Technical Review},
+	author = {Guan, Donghai and Yuan, Weiwei},
+	month = nov,
+	year = {2013},
+	pages = {524--530}
+}
+
+@incollection{mencia_efficient_2008,
+	series = {Lecture {Notes} in {Computer} {Science}},
+	title = {Efficient {Pairwise} {Multilabel} {Classification} for {Large}-{Scale} {Problems} in the {Legal} {Domain}},
+	isbn = {978-3-540-87480-5 978-3-540-87481-2},
+	abstract = {In this paper we applied multilabel classification algorithms to the EUR-Lex database of legal documents of the European Union. On this document collection, we studied three different multilabel classification problems, the largest being the categorization into the EUROVOC concept hierarchy with almost 4000 classes. We evaluated three algorithms: (i) the binary relevance approach which independently trains one classifier per label; (ii) the multiclass multilabel perceptron algorithm, which respects dependencies between the base classifiers; and (iii) the multilabel pairwise perceptron algorithm, which trains one classifier for each pair of labels. All algorithms use the simple but very efficient perceptron algorithm as the underlying classifier, which makes them very suitable for large-scale multilabel classification problems. The main challenge we had to face was that the almost 8,000,000 perceptrons that had to be trained in the pairwise setting could no longer be stored in memory. We solve this problem by resorting to the dual representation of the perceptron, which makes the pairwise approach feasible for problems of this size. The results on the EUR-Lex database confirm the good predictive performance of the pairwise approach and demonstrates the feasibility of this approach for large-scale tasks.},
+	urldate = {2018-06-03},
+	booktitle = {Machine {Learning} and {Knowledge} {Discovery} in {Databases}},
+	publisher = {Springer, Berlin, Heidelberg},
+	author = {Mencía, Eneldo Loza and Fürnkranz, Johannes},
+	year = {2008},
+	doi = {10.1007/978-3-540-87481-2_4},
+	pages = {50--65},
+	file = {Full Text PDF:/home/anarocha/Zotero/storage/IUMPZ63I/Mencía e Fürnkranz - 2008 - Efficient Pairwise Multilabel Classification for L.pdf:application/pdf;Snapshot:/home/anarocha/Zotero/storage/GHCYCXGT/978-3-540-87481-2_4.html:text/html}
+}
+@phdthesis{ladeirahuffman,
+	title = {Aplicação de {Técnicas} de {Mineração} de {Textos} para {Classificação} de {Documentos}: um {Estudo} da {Automatização} da {Triagem} de {Denúncias} na {CGU}},
+	school = {Universidade de Brasília},
+	author = {Andrade, Patrícia Helena Maia Alves},
+	year = {2015}
+}
+
+
+@phdthesis{ticom_aplicacao_2007,
+	title = {Aplicação das técnicas de mineração de textos e sistemas especialistas na liquidação de processos trabalhistas},
+	school = {UFRJ},
+	author = {Ticom, Antonio Alexandre Mello},
+	year = {2007}
+}
+
+@misc{estatisticatsttrt,
+	title = {Tribunais {Regionais} do {Trabalho} - {TST}},
+	url = {http://www.tst.jus.br/web/guest/tribunais-regionais-do-trabalho1},
+	urldate = {2018-06-04},
+	file = {Tribunais Regionais do Trabalho - TST:/home/anarocha/Zotero/storage/S64VMWBU/tribunais-regionais-do-trabalho1.html:text/html}
+}
+
+@misc{cadernopje2016,
+	title = {Caderno {PJe}},
+	url = {http://www.cnj.jus.br/files/conteudo/arquivo/2016/09/551be3d5013af4e50be35888f297e2d7.pdf},
+	author = {Conselho Nacional de Justiça},
+	year = {2016},
+	file = {551be3d5013af4e50be35888f297e2d7.pdf:/home/anarocha/Zotero/storage/H4XS3UHR/551be3d5013af4e50be35888f297e2d7.pdf:application/pdf}
+}
+
+@misc{pjecnj,
+	title = {Processo {Judicial} {Eletrônico} ({PJe}) - {Portal} {CNJ}},
+	url = {http://www.cnj.jus.br/tecnologia-da-informacao/processo-judicial-eletronico-pje},
+	abstract = {Processo Judicial Eletrônico (PJe)},
+	urldate = {2018-06-04},
+	file = {Snapshot:/home/anarocha/Zotero/storage/PYBT82RM/processo-judicial-eletronico-pje.html:text/html}
+}
+
+@misc{sitecnj,
+	title = {Portal {CNJ}},
+	url = {http://www.cnj.jus.br/sobre-o-cnj/quem-somos-visitas-e-contatos},
+	urldate = {2018-05-28},
+	journal = {Portal CNJ},
+	author = {Conselho Nacional de Justiça},
+	annote = {QUEM SOMOS
+},
+	file = {Quem somos, visitas e contatos - Portal CNJ:/home/anarocha/Zotero/storage/4DR6UIN6/quem-somos-visitas-e-contatos.html:text/html}
+}
+@article{artigodatascience,
+	title = {Data science: challenges and directions},
+	volume = {60},
+	issn = {00010782},
+	shorttitle = {Data science},
+	url = {http://dl.acm.org/citation.cfm?doid=3127343.3015456},
+	doi = {10.1145/3015456},
+	number = {8},
+	urldate = {2018-05-28},
+	journal = {Communications of the ACM},
+	author = {Cao, Longbing},
+	month = jul,
+	year = {2017},
+	pages = {59--68}
+}
+@article{reviewportugues,
+	title = {Characterising text mining: a systematic mapping review of the {Portuguese} language},
+	volume = {12},
+	issn = {1751-8814},
+	shorttitle = {Characterising text mining},
+	doi = {10.1049/iet-sen.2016.0226},
+	abstract = {Documents written in natural language constitute a major part of the artefacts produced during the software engineering life cycle. Studies indicate that more than 80\% of enterprise data is stored in some sort of unstructured form, mainly as text. Therefore, the growth of user-generated content, especially from social media, provides a huge amount of data which allows discovering the experiences, opinions, and feelings of users. Text mining refers to the set of tools, techniques, and algorithms adopted to extract useful information from unstructured data. Considering that Portuguese ranks among the ten most spoken languages, and it is the second most common in Twitter, this study aims to map current primary studies that relate to the application of text mining for Portuguese. A systematic mapping method was applied and 6075 primary studies were retrieved up to the year 2014. A total of 203 studies were included, from which more than 60\% analyse texts written in Brazilian variant. The majority of studies focus on the text classification task. Support vector machine and Naïve Bayes appear as main the algorithms. Folha de São Paulo and Público newspapers appear as main corpora, followed by the Portuguese Attorney General\&apos;s Office corpus and Twitter.},
+	number = {2},
+	urldate = {2018-06-01},
+	journal = {IET Software},
+	author = {Souza, Ellen and Costa, Danilo and Castro, Dayvid W. and Vitório, Douglas and Teles, Ingryd and Almeida, Rafaela and Alves, Tiago and Oliveira, Adriano L. I. and Gusmão, Cristine},
+	month = jul,
+	year = {2017},
+	pages = {49--75}
+}
+@misc{processowiki,
+	title = {Processo judicial},
+	copyright = {Creative Commons Attribution-ShareAlike License},
+	url = {https://pt.wikipedia.org/w/index.php?title=Processo_judicial&oldid=51330469},
+	abstract = {Processo judicial é uma forma sistemática de proceder, necessária ao válido exercício do poder, onde ao fim, espera-se que um juiz de direito ou tribunal, com regular jurisdição, profira decisões sobre o Direito acerca de uma pessoa ou propriedade.
+O processo é, assim, o conjunto de documentos e peças processuais, que seguindo um rito jurídico pré-estabelecido, e uma burocracia predeterminada, possibilitam ao juízo competente determinar uma sentença, em sentido amplo. O processo tramita sob a forma de autos, que são informalmente, por vezes, também referidos como "processo". Os autos são o conjunto de documentos que se ordenam cronologicamente para materializar os atos do procedimento. O processo, por sua vez, se caracteriza pela sua finalidade, qual seja, a jurisdição; é o “instrumento para o legítimo exercício de poder”.},
+	urldate = {2018-06-04},
+	journal = {Wikipédia, a enciclopédia livre},
+	month = feb,
+	year = {2018},
+	note = {Page Version ID: 51330469},
+	file = {Snapshot:/home/anarocha/Zotero/storage/JJ7MXSTY/index.html:text/html}
+}
+
+@article{jurimetriaingles,
+	title = {Challenges {When} {Using} {Jurimetrics} in {Brazil}—{A} {Survey} of {Courts}},
+	volume = {9},
+	copyright = {http://creativecommons.org/licenses/by/3.0/},
+	url = {http://www.mdpi.com/1999-5903/9/4/68},
+	doi = {10.3390/fi9040068},
+	abstract = {Jurimetrics is the application of quantitative methods, usually statistics, to law. An important step to implement a jurimetric analysis is to extract raw data from courts and organize that data in a way that can be processed. Most of the raw data is unstructured and written in natural language, which stands as a challenge to Computer Science experts. As it requires expertise in law, statistics, and computer science, jurimetrics is a multidisciplinary field. When trying to implement a jurimetric system in Brazil, additional challenges were identified due to the heterogeneity of the different court systems, the lack of standards, and how the open data laws in Brazil are interpreted and implemented. In this article, we present a survey of Brazilian courts in terms of readiness to implement a jurimetric system. Analyzing a sample of data, we have found, in light of Brazil’s open data regulation, privacy issues and technical issues. Finally, we propose a roadmap that encompasses both technology and public policy to meet those challenges.},
+	number = {4},
+	urldate = {2018-05-23},
+	journal = {Future Internet},
+	author = {Armonas Colombo, Bruna and Buck, Pedro and Miana Bezerra, Vinicius},
+	month = oct,
+	year = {2017},
+	keywords = {computacional law, e-government, jurimetrics, legal informatics, open data, public policy},
+	pages = {68}
+}
+@misc{leisiespj,
+	title = {Resolução {Nº} 76 de 12/05/2009},
+	url = {http://www.cnj.jus.br/atos-normativos?documento=110f},
+	abstract = {Dispõe sobre os princípios do Sistema de Estatística do Poder Judiciário, estabelece seus indicadores, fixa prazos, determina penalidades e dá outras providências.},
+	urldate = {2018-05-28},
+	year = {2009},
+	annote = {SIESPJ},
+	file = {2009 - Resolução Nº 76 de 12052009.pdf:/home/anarocha/Zotero/storage/FG258FQL/2009 - Resolução Nº 76 de 12052009.pdf:application/pdf;Snapshot:/home/anarocha/Zotero/storage/N47WACC4/atos-normativos.html:text/html}
+}
+
+@misc{novocpc,
+	title = {Lei {Nº} 13.105 de 16 de março de 2015},
+	url = {http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105.htm},
+	urldate = {2018-05-26},
+	author = {Brasil},
+	annote = {Código de Processo Cívil},
+	file = {L13105:/home/anarocha/Zotero/storage/MMPKY4EW/l13105.html:text/html}
+}
+@article{briefreviewtm,
+	title = {A {Brief} {Survey} of {Web} {Data} {Extraction} {Tools}},
+	volume = {31},
+	issn = {0163-5808},
+	url = {http://doi.acm.org/10.1145/565117.565137},
+	doi = {10.1145/565117.565137},
+	abstract = {In the last few years, several works in the literature have addressed the problem of data extraction from Web pages. The importance of this problem derives from the fact that, once extracted, the data can be handled in a way similar to instances of a traditional database. The approaches proposed in the literature to address the problem of Web data extraction use techniques borrowed from areas such as natural language processing, languages and grammars, machine learning, information retrieval, databases, and ontologies. As a consequence, they present very distinct features and capabilities which make a direct comparison difficult to be done. In this paper, we propose a taxonomy for characterizing Web data extraction fools, briefly survey major Web data extraction tools described in the literature, and provide a qualitative analysis of them. Hopefully, this work will stimulate other studies aimed at a more comprehensive analysis of data extraction approaches and tools for Web data.},
+	number = {2},
+	urldate = {2018-06-02},
+	journal = {SIGMOD Rec.},
+	author = {Laender, Alberto H. F. and Ribeiro-Neto, Berthier A. and da Silva, Altigran S. and Teixeira, Juliana S.},
+	month = jun,
+	year = {2002},
+	pages = {84--93},
+	file = {Laender et al. - 2002 - A Brief Survey of Web Data Extraction Tools.pdf:/home/anarocha/Zotero/storage/6K4U5MXU/Laender et al. - 2002 - A Brief Survey of Web Data Extraction Tools.pdf:application/pdf}
+}
+
+@article{revisaotmana,
+	title = {A recent overview of the state-of-the-art elements of text classification},
+	volume = {106},
+	issn = {0957-4174},
+	url = {http://www.sciencedirect.com/science/article/pii/S095741741830215X},
+	doi = {10.1016/j.eswa.2018.03.058},
+	abstract = {The aim of this study is to provide an overview the state-of-the-art elements of text classification. For this purpose, we first select and investigate the primary and recent studies and objectives in this field. Next, we examine the state-of-the-art elements of text classification. In the following steps, we qualitatively and quantitatively analyse the related works. Herein, we describe six baseline elements of text classification including data collection, data analysis for labelling, feature construction and weighing, feature selection and projection, training of a classification model, and solution evaluation. This study will help readers acquire the necessary information about these elements and their associated techniques. Thus, we believe that this study will assist other researchers and professionals to propose new studies in the field of text classification.},
+	urldate = {2018-05-28},
+	journal = {Expert Systems with Applications},
+	author = {Mirończuk, Marcin Michał and Protasiewicz, Jarosław},
+	month = sep,
+	year = {2018},
+	keywords = {Document classification, Document classification overview, Text classification, Text classification overview},
+	pages = {36--54},
+	file = {ScienceDirect Full Text PDF:/home/anarocha/Zotero/storage/GKNA8VM6/Mirończuk e Protasiewicz - 2018 - A recent overview of the state-of-the-art elements.pdf:application/pdf;ScienceDirect Snapshot:/home/anarocha/Zotero/storage/DR66P54R/S095741741830215X.html:text/html}
+}
+
+@misc{agravoinstrumento,
+	title = {Agravo de instrumento em matéria trabalhista},
+	url = {https://www.direitonet.com.br/artigos/exibir/10482/Agravo-de-instrumento-em-materia-trabalhista},
+	abstract = {Análise a respeito do agravo de instrumento no processo do trabalho, apontando suas principais características, princípios, requisitos e aplicabilidade do mesmo junto ao Direito Processual do Trabalho.},
+	urldate = {2018-05-31},
+	journal = {DireitoNet},
+	author = {Ribeiro, Júlio César},
+	file = {Snapshot:/home/anarocha/Zotero/storage/INEDXCRQ/Agravo-de-instrumento-em-materia-trabalhista.html:text/html}
+}
+
+
+@article{agravopeticao,
+	title = {{AGRAVO} {DE} {PETIÇÃO} {NO} Â{MBITO} {TRABALHISTA}},
+	volume = {3},
+	issn = {2357-867X},
+	url = {http://www.santacruz.br/ojs/index.php/JICEX/article/view/534},
+	abstract = {Os Agravos foram inseridos na legislação pátria após a proclamação da Independência, em decorrência do advento da lei de 20 de outubro de 1823, a qual declarava em vigor a legislação que regeu o Brasil até 25.04.1821, sendo que, neste curso, foram modificadas e alteradas por diversas vezes, com o escopo de garantir a celeridade do processo. O Código de Processo Civil de 1939, consagrou o Agravo de Petição com especificidades, e o distingui em relação às demais formas de agravo. Atualmente, o Agravo de Petição é uma das opções de recurso nos trâmites processuais trabalhistas, que tem como finalidade impugnar as decisões definitivas de execução - diferentemente do Agravo de Instrumento, que é o recurso cabível da decisão do juiz que negou recursos interpostos pela parte. O Agravo de Petição visa rediscutir a penhora e os cálculos da liquidação, e deverá ser efetuado no prazo especifico do artigo 897, alínea “a” da CLT : “ Cabe agravo, no prazo de 8 (oito) dias: a) de petição, das decisões do Juiz ou Presidente, nas execuções”. Ainda, deve ser necessário que se delimite, justificadamente, os valores e a matéria objetos do recurso, fazendo uma minuciosa e detalhada explicação do seu inconformismo. Para que surta seus efeitos, deverão ser observados os pressupostos processuais e os requisitos de admissibilidade quanto à matéria, valores e os fundamentos da decisão, os quais serão analisados pelo juiz, abrindo-se vista à parte contrária para contrapor. Nos termos da lei, tem efeito suspensivo porque, ao ser interposto, já existe penhora e ainda que ao apelo seja atribuído efeito apenas devolutivo, a execução será provisória e, assim, não poderá ir além da penhora. O julgamento do Agravo de Petição se dá como o do Recurso Ordinário, sendo facultado aos advogados das partes a sustentação oral. Em especial, este recurso tem como quesito a impugnação e demonstrar que trará prejuízo à parte, e que, o quanto antes for sanada a divergência, evitará maiores desgastes aos envolvidos. Pode, ainda, favorecer na celeridade processual e encerramento da demanda.},
+	number = {3},
+	urldate = {2018-05-31},
+	journal = {JICEX},
+	author = {Castro, Marco Antonio de and Bacanof, Nayara Regina Giroldo and Alquier, Valdeleni Aparecida Mendes and Bandini, Renato Luiz de Avelar},
+	month = mar,
+	year = {2015},
+	keywords = {CLT. Recurso. Agravo. Petição.},
+	file = {Full Text PDF:/home/anarocha/Zotero/storage/TCIHNHTS/Castro et al. - 2015 - AGRAVO DE PETIÇÃO NO ÂMBITO TRABALHISTA.pdf:application/pdf;Snapshot:/home/anarocha/Zotero/storage/ZZW4SL8W/534.html:text/html}
+}
+
+
+@article{recursos,
+	title = {Os recursos na {Justiça} do {Trabalho} - {Artigos} - {Conteúdo} {Jurídico}},
+	url = {http://www.conteudojuridico.com.br/artigo,os-recursos-na-justica-do-trabalho,32695.html},
+	urldate = {2018-05-31},
+	author = {OLIVEIRA, Fernando José Vianna},
+	file = {Os recursos na Justiça do Trabalho - Artigos - Conteúdo Jurídico:/home/anarocha/Zotero/storage/VNGBMRBR/artigo,os-recursos-na-justica-do-trabalho,32695.html:text/html}
+}
+
+@article{tfidf,
+	title = {Term-weighting approaches in automatic text retrieval},
+	volume = {24},
+	issn = {0306-4573},
+	url = {http://www.sciencedirect.com/science/article/pii/0306457388900210},
+	doi = {10.1016/0306-4573(88)90021-0},
+	abstract = {The experimental evidence accumulated over the past 20 years indicates that text indexing systems based on the assignment of appropriately weighted single terms produce retrieval results that are superior to those obtainable with other more elaborate text representations. These results depend crucially on the choice of effective termweighting systems. This article summarizes the insights gained in automatic term weighting, and provides baseline single-term-indexing models with which other more elaborate content analysis procedures can be compared.},
+	number = {5},
+	urldate = {2018-05-28},
+	journal = {Information Processing \& Management},
+	author = {Salton, Gerard and Buckley, Christopher},
+	month = jan,
+	year = {1988},
+	pages = {513--523},
+	file = {Salton e Buckley - 1988 - Term-weighting approaches in automatic text retrie.pdf:/home/anarocha/Zotero/storage/5JPJA3B6/Salton e Buckley - 1988 - Term-weighting approaches in automatic text retrie.pdf:application/pdf;ScienceDirect Snapshot:/home/anarocha/Zotero/storage/S7NBBX7A/0306457388900210.html:text/html}
+}
+
+@article{revisaotmpt,
+	title = {Characterising text mining: a systematic mapping review of the {Portuguese} language},
+	volume = {12},
+	issn = {1751-8814},
+	shorttitle = {Characterising text mining},
+	url = {http://digital-library.theiet.org/content/journals/10.1049/iet-sen.2016.0226},
+	doi = {10.1049/iet-sen.2016.0226},
+	abstract = {Documents written in natural language constitute a major part of the artefacts produced during the software engineering life cycle. Studies indicate that more than 80\% of enterprise data is stored in some sort of unstructured form, mainly as text. Therefore, the growth of user-generated content, especially from social media, provides a huge amount of data which allows discovering the experiences, opinions, and feelings of users. Text mining refers to the set of tools, techniques, and algorithms adopted to extract useful information from unstructured data. Considering that Portuguese ranks among the ten most spoken languages, and it is the second most common in Twitter, this study aims to map current primary studies that relate to the application of text mining for Portuguese. A systematic mapping method was applied and 6075 primary studies were retrieved up to the year 2014. A total of 203 studies were included, from which more than 60\% analyse texts written in Brazilian variant. The majority of studies focus on the text classification task. Support vector machine and Naïve Bayes appear as main the algorithms. Folha de São Paulo and Público newspapers appear as main corpora, followed by the Portuguese Attorney General\&apos;s Office corpus and Twitter.},
+	number = {2},
+	urldate = {2018-06-01},
+	journal = {IET Software},
+	author = {Souza, Ellen and Costa, Danilo and Castro, Dayvid W. and Vitório, Douglas and Teles, Ingryd and Almeida, Rafaela and Alves, Tiago and Oliveira, Adriano L. I. and Gusmão, Cristine},
+	month = jul,
+	year = {2017},
+	pages = {49--75},
+	file = {Snapshot:/home/anarocha/Zotero/storage/BLGA3ZCC/iet-sen.2016.html:text/html;Souza et al. - 2017 - Characterising text mining a systematic mapping r.pdf:/home/anarocha/Zotero/storage/KZK5T48N/Souza et al. - 2017 - Characterising text mining a systematic mapping r.pdf:application/pdf}
+}
+@article{revisaotmdaniel,
+	title = {A {Review} of {Machine} {Learning} {Algorithms} for {Text}-{Documents} {Classification}},
+	volume = {1},
+	issn = {1798-2340},
+	url = {http://www.jait.us/index.php?m=content&c=index&a=show&catid=160&id=859},
+	doi = {10.4304/jait.1.1.4-20},
+	number = {1},
+	urldate = {2018-05-28},
+	journal = {Journal of Advances in Information Technology},
+	author = {Baharudin, Baharum and Lee, Lam Hong and Khan, Khairullah},
+	month = feb,
+	year = {2010},
+	file = {Baharudin et al. - 2010 - A Review of Machine Learning Algorithms for Text-D.pdf:/home/anarocha/Zotero/storage/L9YB5U9S/Baharudin et al. - 2010 - A Review of Machine Learning Algorithms for Text-D.pdf:application/pdf}
+}
+
+@misc{tpucnj,
+	title = {Tabelas {Processuais} {Unificadas} - {Portal} {CNJ}},
+	url = {http://www.cnj.jus.br/programas-e-acoes/tabelas-processuais-unificadas},
+	abstract = {Tabelas Processuais Unificadas (TPU)},
+	urldate = {2018-05-28},
+	file = {Snapshot:/home/anarocha/Zotero/storage/RUZWW4UG/tabelas-processuais-unificadas.html:text/html}
+}
+
+
+@misc{tputst,
+	title = {Tabelas {Processuais} {Unificadas} - {TST}},
+	url = {http://www.tst.jus.br/tabelas-processuais-unificadas},
+	urldate = {2018-05-28},
+	file = {Tabelas Processuais Unificadas - TST:/home/anarocha/Zotero/storage/95JLKR4X/tabelas-processuais-unificadas.html:text/html}
+}
+
+
+@misc{crispdm,
+	title = {{CRISP}-{DM} by {Smart} {Vision} {Europe}},
+	url = {http://crisp-dm.eu/},
+	urldate = {2018-06-04},
+	file = {CRISP-DM by Smart Vision Europe:/home/anarocha/Zotero/storage/CDNJD7RN/crisp-dm.eu.html:text/html}
+}
+
+@misc{conselho_superior_da_justica_do_trabalho_glossario_2017,
+	title = {Glossário de {Indicadores} do {Conselho} {Superior} da {Justiça} do {Trabalho} {Versão} 2.0 2017},
+	author = {Conselho Superior da Justiça do Trabalho},
+	year = {2017},
+	file = {Conselho Superior da Justiça do Trabalho - 2017 - Glossário de Indicadores do Conselho Superior da J.pdf:/home/anarocha/Zotero/storage/XADBIJNE/Conselho Superior da Justiça do Trabalho - 2017 - Glossário de Indicadores do Conselho Superior da J.pdf:application/pdf}
+}
+@article{carvalho_o_2017,
+	title = {O {PRINCÍPIO} {DA} {AUTOMATIZAÇÃO} {DO} {PROCESSO} {ELETRÔNICO} {COMO} {CATALISADOR} {DA} {OBSERVÂNCIA} {AOS} {PRECEDENTES} {DO} {TST}},
+	volume = {24},
+	issn = {2238-6815},
+	abstract = {A partir da Lei 11.419/06, o processo judicial brasileiro passou a se informatizar,
+introduzindo no Direito Processual o princípio da automatização. Com isso, migrou-se a segurança do fluxo processual, antes assentada subjetivamente no serventuário de Justiça, para a confiança no procedimento em si, de cunho objetivo, alicerçada no código-fonte (art. 10, Lei 11.419/06). O código-fonte do Processo Judicial Eletrônico (PJe) é permeado de algoritmos que garantem a lisura do procedimento, podendo, inclusive, no que diz respeito à disciplina judiciária e controle das decisões em todos os graus de jurisdição, vir a assegurar que se observem os ditames da Lei 13.015/14 (e.g.art. 896, § 4º, CLT), bem como do Código de Processo Civil (e.g. art. 988, II). Com isso, os julgamentos por precedentes reforçam a segurança jurídica e eficácia da duração razoável do processo (art. 5º, XXXVI e LXXVIII, da Constituição Federal), dando vazão aos milhões de processos pendentes de trânsito em julgado. Por fim, permitem que os magistrados melhorem a qualidade dos julgamentos das lides: i) ainda não uniformizadas; ii) em que a jurisprudência supostamente deva ser superada; e iii) nos denominados hard cases.},
+	journal = {Revista Fórum Trabalhista - RFT},
+	author = {Carvalho, Maximiliano Pereira de},
+	year = {2017}
+}
+@article{segurancajuridica,
+	title = {{PRINCÍPIO} {DA} {SEGURANÇA} {JURÍDICA}},
+	volume = {8},
+	copyright = {Direitos autorais},
+	issn = {1980-7791},
+	url = {https://siaiap32.univali.br/seer/index.php/rdp/article/view/5455},
+	doi = {10.14210/rdp.v8n3.p2445-2458},
+	abstract = {O presente artigo científico tem como objetivo geral analisar o princípio da segurança jurídica no ordenamento jurídico brasileiro. Como objetivos específicos que foram desenvolvidos apresenta-se a diferenciação entre Princípios e Valores, bem como a falta de segurança jurídica no ordenamento jurídico brasileiro. A metodologia aplicada para desenvolver a fase de investigação foi a do método indutivo e para as demais fases de tratamento de dados e Relatório da Pesquisa foi empregado o método indutivo.},
+	number = {3},
+	urldate = {2018-05-25},
+	journal = {Revista Eletrônica Direito e Política},
+	author = {Seger, Giovana Abreu da Silva and Seger, Marcelo},
+	year = {2013},
+	keywords = {Princípio, Segurança Jurídica., Valores},
+	pages = {2445--2458}
+}
+@misc{leijusticaemnumeros,
+	title = {Portaria {CNJ} 46/2017},
+	url = {http://www.cnj.jus.br/busca-atos-adm?documento=3332},
+	abstract = {O Conselho Nacional de Justiça (CNJ) é uma instituição pública que visa aperfeiçoar o trabalho do sistema judiciário brasileiro, principalmente no que diz respeito ao controle e à transparência administrativa e processual.},
+	urldate = {2018-05-28},
+	author = {Conselho Nacional de Justiça, BRASIL},
+	year = {2017},
+	annote = {JUSTIÇA EM NÚMEROS},
+	file = {Atos Administrativos - Portal CNJ.pdf:/home/anarocha/Zotero/storage/FXCLQ5SB/Atos Administrativos - Portal CNJ.pdf:application/pdf;Snapshot:/home/anarocha/Zotero/storage/BILDTQA7/busca-atos-adm.html:text/html}
+}
+
+@misc{justicaemnumeros2017,
+	title = {Justiça em {Números} 2017},
+	publisher = {CNJ},
+	author = {Conselho Nacional de Justiça, Brasil},
+	year = {2017},
+	file = {Conselho Nacional de Justiça - 2017 - Justiça em Números 2017.pdf:/home/anarocha/Zotero/storage/9GEFMDK7/Conselho Nacional de Justiça - 2017 - Justiça em Números 2017.pdf:application/pdf}
+}
+@inproceedings{jurimetriaportugues,
+	address = {João Pessoa},
+	title = {Jurimetria: construindo a teoria},
+	isbn = {978-85-5505-011-4},
+	url = {http://publicadireito.com.br/artigos/?cod=90797bef9ef6175e},
+	abstract = {Os objetivos deste artigo são vário s  : o primeiro deles  é contribuir  para a  introdução, no  Brasil,  do  método da  Jurimetria.  Trata -  se um  novo  método  de  compreender as      informações  judiciais através da  estatística, e reinterpretar os dados obtidos,  a fim decontribuir  com a melhoria da prestação jurisdicional e com o enfrentamento dos
+problemas sociais, por meio do apo ntamento de vícios em Políticas Públicas. O artigo 
+também visa fazer uma revisão bibliográfica internacionale nacional sobre a Jurimetria, em busca de formar um conceito sobre o significado e alcance da Jurimetria, desmistificando as informações equivocad as sobre este método de análise do Direito que  está em formação no Brasil},
+	publisher = {CONPEDI},
+	author = {Daniel Francisco Nagao Menezes},
+	year = {2014},
+	file = {Daniel Francisco Nagao Menezes - 2014 - JURIMETRIA CONSTRUINDO A TEORIA.pdf:/home/anarocha/Zotero/storage/L9JKX4S3/Daniel Francisco Nagao Menezes - 2014 - JURIMETRIA CONSTRUINDO A TEORIA.pdf:application/pdf}
+}
+
+
+@misc{leiegestao,
+	title = {Provimento {Nº} 2, de 17 de {Dezembro} de 2008},
+	author = {Tribunal Superior do Trabalho, Brasil},
+	year = {2008},
+	file = {Lei E-Gestão:/home/anarocha/Zotero/storage/5P3Q9LEY/2008_prov002.pdf:application/pdf}
+}
+
+@inproceedings{paradoxofchoice,
+	title = {When more is less: the paradox of choice in search engine use},
+	isbn = {978-1-60558-483-6},
+	shorttitle = {When more is less},
+	url = {http://portal.acm.org/citation.cfm?doid=1571941.1572030},
+	doi = {10.1145/1571941.1572030},
+	urldate = {2018-05-26},
+	publisher = {ACM Press},
+	author = {Oulasvirta, Antti and Hukkinen, Janne P. and Schwartz, Barry},
+	year = {2009},
+	pages = {516},
+	file = {Oulasvirta et al. - 2009 - When more is less the paradox of choice in search.pdf:/home/anarocha/Zotero/storage/FC4GSA4K/Oulasvirta et al. - 2009 - When more is less the paradox of choice in search.pdf:application/pdf}
+}
+
+@misc{pje,
+	title = {PJe},
+	url = {http://www.pje.jus.br/wiki},
+	urldate = {2018-06-04}
+}
+
+@book{thetextmininghandbook,
+	title = {{THE} {TEXT} {MINING} {HANDBOOK}: {Advanced} {Approaches} in {Analyzing} {Unstructured} {Data}},
+	isbn = {978-0-521-83657-9},
+	abstract = {Text mining tries to solve the crisis of information overload by combining techniques from data mining, machine learning, natural language processing, information retrieval, and knowledge management. In addition to providing an in-depth examination of core text mining and link detection algorithms and operations, this book examines advanced pre-processing techniques, knowledge representation considerations, and visualization approaches. Finally, it explores current real-world, mission-critical applications of text mining and link detection in such varied fields as M\&A business intelligence, genomics research and counter-terrorism activities.},
+	author = {Feldman, Ronen and Sanger, James},
+	year = {2006}
+}
+@inproceedings{ferauche,
+	address = {São Paulo},
+	title = {Utilização de {Técnicas} de {Inteligência} {Artificial} na tarefa de {Classificação} {Jurisprudencial} do {Tribunal} {Regional} do {Trabalho} 2ª. {Região} {São} {Paulo}},
+	abstract = {Este artigo apresenta resultados obtidos durante o processo de aplicação de técnicas 
+de Inteligência Artificial na tarefa de classificação das ementas que compõe a jurisprudência 
+do Tribunal Regional do Trabalho da 2ª. Região – São Paulo. Utilizando-se de técnicas de 
+aprendizado de máquina, foi possível estabelecer um modelo que aprendeu com as 
+classificações anteriores, e foi possível realizar a classificação de ementas desconhecidas pelo 
+modelo, possibilitando a criação de futuros modelos que aprendam com o conhecimento 
+explícito jurídico.},
+	booktitle = {{VI} {WorkShop} de {Pós}-{Graduação} e {Pesquisa} do {Centro} {Paula} {Souza}},
+	author = {Ferauche, Thiago and Amaral De Almeida, Maurício},
+	year = {2011},
+	annote = {PORTUGUES
+},
+	file = {Ferauche e Amaral De Almeida - 2018 - Utilização de Técnicas de Inteligência Artificial .pdf:/home/anarocha/Zotero/storage/SF8MPF5Q/Ferauche e Amaral De Almeida - 2018 - Utilização de Técnicas de Inteligência Artificial .pdf:application/pdf;thiago-ferauche.pdf:/home/anarocha/Zotero/storage/PV9EU4GP/thiago-ferauche.pdf:application/pdf}
+}
+@article{european_court,
+	title = {Predicting judicial decisions of the {European} {Court} of {Human} {Rights}: a {Natural} {Language} {Processing} perspective},
+	volume = {2},
+	issn = {2376-5992},
+	shorttitle = {Predicting judicial decisions of the {European} {Court} of {Human} {Rights}},
+	doi = {10.7717/peerj-cs.93},
+	abstract = {Recent advances in Natural Language Processing and Machine Learning provide us with the tools to build predictive models that can be used to unveil patterns driving judicial decisions. This can be useful, for both lawyers and judges, as an assisting tool to rapidly identify cases and extract patterns which lead to certain decisions. This paper presents the first systematic study on predicting the outcome of cases tried by the European Court of Human Rights based solely on textual content. We formulate a binary classification task where the input of our classifiers is the textual content extracted from a case and the target output is the actual judgment as to whether there has been a violation of an article of the convention of human rights. Textual information is represented using contiguous word sequences, i.e., N-grams, and topics. Our models can predict the court’s decisions with a strong accuracy (79\% on average). Our empirical analysis indicates that the formal facts of a case are the most important predictive factor. This is consistent with the theory of legal realism suggesting that judicial decision-making is significantly affected by the stimulus of the facts. We also observe that the topical content of a case is another important feature in this classification task and explore this relationship further by conducting a qualitative analysis.},
+	urldate = {2018-06-04},
+	journal = {PeerJ Computer Science},
+	author = {Aletras, Nikolaos and Tsarapatsanis, Dimitrios and Preoţiuc-Pietro, Daniel and Lampos, Vasileios},
+	month = oct,
+	year = {2016},
+	pages = {e93}
+}
+@incollection{chinese,
+	address = {Cham},
+	title = {Automatically {Classify} {Chinese} {Judgment} {Documents} {Utilizing} {Machine} {Learning} {Algorithms}},
+	volume = {10179},
+	isbn = {978-3-319-55704-5 978-3-319-55705-2},
+	abstract = {In law, a judgment is a decision by a court that resolves a controversy and determines the rights and liabilities of parties in a legal action or proceeding. In 2013, China Judgments Online system was launched oﬃcially for record keeping and notiﬁcation, up to now, over 23 million electronic judgment documents are recorded. The huge amount of judgment documents has witnessed the improvement of judicial justice and openness. Document categorization becomes increasingly important for judgments indexing and further analysis. However, it is almost impossible to categorize them manually due to their large volume and rapid growth. In this paper, we propose a machine learning approach to automatically classify Chinese judgment documents using machine learning algorithms including Naive Bayes (NB), Decision Tree (DT), Random Forest (RF) and Support Vector Machine (SVM). A judgment document is represented as vector space model (VSM) using TF-IDF after words segmentation. To improve performance, we construct a set of judicial stop words. Besides, as TF-IDF generates a high dimensional feature vector, which leads to an extremely high time complexity, we utilize three dimensional reduction methods. Based on 6735 pieces of judgment documents, extensive experiments demonstrate the eﬀectiveness and high classiﬁcation performance of our proposed method.},
+	urldate = {2018-06-03},
+	booktitle = {Database {Systems} for {Advanced} {Applications}},
+	publisher = {Springer International Publishing},
+	author = {Lei, Miaomiao and Ge, Jidong and Li, Zhongjin and Li, Chuanyi and Zhou, Yemao and Zhou, Xiaoyu and Luo, Bin},
+	editor = {Bao, Zhifeng and Trajcevski, Goce and Chang, Lijun and Hua, Wen},
+	year = {2017},
+	doi = {10.1007/978-3-319-55705-2_1},
+	pages = {3--17},
+	file = {Lei et al. - 2017 - Automatically Classify Chinese Judgment Documents .pdf:/home/anarocha/Zotero/storage/68SZP2KE/Lei et al. - 2017 - Automatically Classify Chinese Judgment Documents .pdf:application/pdf}
+}
+
+@incollection{tripadivisor,
+	address = {Cham},
+	title = {Assessing {Reliability} of {Social} {Media} {Data}: {Lessons} from {Mining} {TripAdvisor} {Hotel} {Reviews}},
+	isbn = {978-3-319-51167-2 978-3-319-51168-9},
+	shorttitle = {Assessing {Reliability} of {Social} {Media} {Data}},
+	url = {http://link.springer.com/10.1007/978-3-319-51168-9_45},
+	abstract = {As an emerging research paradigm, big data analytics has been gaining currency in various fields. However, in existing hospitality and tourism literature there is scarcity of discussions on the quality of data which may impact the validity and generalizability of research findings. This study examines the reliability of online hotel reviews in TripAdvisor by developing a text classifier to predict travel purpose (i.e., business vs. leisure) based upon review textual contents. The classifier is tested over a range of cities and data sizes to examine its sensitivity to data samples. The findings show that, while the classifier’s performance is fairly consistent across different sets of cities, there are variations in response to data sizes and sampling methods. More importantly, a considerable amount of noise is found in the data, which leads to misclassification. Furthermore, a novel approach is developed to address the misclassification problem resulting from data noise. This study reveals important data quality issues and contributes to the theoretical foundations of social media analytics in hospitality and tourism.},
+	urldate = {2018-06-03},
+	booktitle = {Information and {Communication} {Technologies} in {Tourism} 2017},
+	publisher = {Springer International Publishing},
+	author = {Xiang, Zheng and Du, Qianzhou and Ma, Yufeng and Fan, Weiguo},
+	editor = {Schegg, Roland and Stangl, Brigitte},
+	year = {2017},
+	doi = {10.1007/978-3-319-51168-9_45},
+	pages = {625--638}
+}
+
+@inproceedings{de_maat_machine_2010,
+	address = {AMSTERDAM},
+	title = {Machine {Learning} versus {Knowledge} {Based} {Classification} of {Legal} {Texts}},
+	abstract = {This paper presents results of an experiment in which we used machine learning (ML) techniques to classify sentences in Dutch legislation. These results are compared to the results of a pattern-based classifier. Overall, the ML classifier performs as accurate ({\textgreater}90\%) as the pattern based one, but seems to generalize worse to new laws. Given these results, the pattern based approach is to be preferred since its reasons for classification are clear and can be used for further modelling of the content of the sentences.},
+	booktitle = {Frontiers in {Artificial} {Intelligence} and {Applications}},
+	author = {de Maat, Emile and Krabben, Kai and Winkels, Radboud},
+	year = {2010}
+}
+
+
+@inproceedings{goncalves_is_2005,
+	address = {New York, NY, USA},
+	series = {{ICAIL} '05},
+	title = {Is {Linguistic} {Information} {Relevant} for the {Classification} of {Legal} {Texts}?},
+	isbn = {978-1-59593-081-1},
+	url = {http://doi.acm.org/10.1145/1165485.1165512},
+	doi = {10.1145/1165485.1165512},
+	abstract = {Text classification is an important task in the legal domain. In fact, most of the legal information is stored as text in a quite unstructured format and it is important to be able to automatically classify these texts into a predefined set of concepts.Support Vector Machines (SVM), a machine learning algorithm, has shown to be a good classifier for text bases [12]. In this paper, SVMs are applied to the classification of European Portuguese legal texts - the Portuguese Attorney General's Office Decisions - and the relevance of linguistic information in this domain, namely lemmatisation and part-of-speech tags, is evaluated.The obtained results show that some linguistic information (namely, lemmatisation and the part-of-speech tags) can be successfully used to improve the classification results and, simultaneously, to decrease the number of features needed by the learning algorithm.},
+	urldate = {2018-06-03},
+	booktitle = {Proceedings of the 10th {International} {Conference} on {Artificial} {Intelligence} and {Law}},
+	publisher = {ACM},
+	author = {Gonçalves, Teresa and Quaresma, Paulo},
+	year = {2005},
+	pages = {168--176}
+}
+
+
+@article{cortes_support-vector_1995,
+	title = {Support-vector networks},
+	volume = {20},
+	issn = {0885-6125, 1573-0565},
+	url = {https://link.springer.com/article/10.1007/BF00994018},
+	doi = {10.1007/BF00994018},
+	abstract = {Thesupport-vector network is a new learning machine for two-group classification problems. The machine conceptually implements the following idea: input vectors are non-linearly mapped to a very high-dimension feature space. In this feature space a linear decision surface is constructed. Special properties of the decision surface ensures high generalization ability of the learning machine. The idea behind the support-vector network was previously implemented for the restricted case where the training data can be separated without errors. We here extend this result to non-separable training data.High generalization ability of support-vector networks utilizing polynomial input transformations is demonstrated. We also compare the performance of the support-vector network to various classical learning algorithms that all took part in a benchmark study of Optical Character Recognition.},
+	number = {3},
+	urldate = {2018-06-03},
+	journal = {Machine Learning},
+	author = {Cortes, Corinna and Vapnik, Vladimir},
+	month = sep,
+	year = {1995},
+	pages = {273--297}
+}
+-------------------------------------------------------
 @article{Biolchini_2005_Systematicreviewin,
   author = {Jorge Biolchini and P. Gomes Mian and A. Candida Cruz Natali and G. Horta Travassos},
   title = {Systematic review in software engineering},

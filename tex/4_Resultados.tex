@@ -1,0 +1,120 @@
+Nesta seção, apresenta-se o resultado do estudo e experimentos iniciais que foram obtidos até o momento.
+
+\section{Entendimento do Negócio}
+
+Nesta etapa, busca-se entender a relevância do assunto dentro do contexto jurídico trabalhista, bem como se dá o fluxo processual dentro do PJe. Parte deste entendimento já se encontra apresentado nas seções 3.1, 3.2 e 3.3. Como o escopo do projeto está restrito aos processos que tramitam na segunda instância, é preciso entender quais são os documentos juntados no momento em que o processo chega nesta jurisdição. 
+
+Para que um processo seja autuado neste nível, existem duas possibilidades. A primeira delas trata dos processos que são originários na segunda instância, ou seja, a competência do julgamento da lide em questão deve ser apreciada pela segunda instância, não cabendo julgamento pela primeira instância. Assim, os advogados protocolam o documento do tipo Petição Inicial diretamente na segunda instância. A segunda possibilidade trata dos processos que já foram julgados em primeira instância, mas que uma das partes (ou ambas) discordam da decisão dos magistrados, de forma que recorrem à segunda instância para que julgue os itens em discordância. Os advogados podem recorrer elaborando um dos seguintes tipos documentos, que são protocolados ainda em primeira instância: Agravo de Instrumento em Agravo de Petição, Agravo de Instrumento em Recurso Ordinário, Agravo de Petição, Recurso Adesivo, Recurso Ordinário. Uma vez anexados esses documentos ao processo, e preenchida as demais informações necessárias, o processo é remetido da primeira à segunda instância, e passa a tramitar neste grau. Os demais documentos que são juntados posteriormente à chegada do processos são menos relevantes para a análise pois nesse momento, uma vez s servidores já terão que ter lido os documentos iniciais, e já terão tido o esforço manual de identificar manualmente o assunto do processo.  Abaixo explica-se resumidamente o propósito de cada documento no contexto dos documentos que chegam à 2ª instância;
+
+
+\begin{itemize}
+\item \textbf{Petição inicial}: É a peça processual que dá início ao processo, abrangendo os fatos ocorridos, os fundamentos jurídicos e o pedido, apresentando ao juiz as informações necessárias para o julgamento da causa. Está descrita no artigo 319 do CPC \cite{novocpc}
+
+\item \textbf{Recurso Ordinário}:Trata-se de recurso de fundamentação livre cabível contra sentenças definitivas e terminativas prolatadas na primeira instância buscando uma reforma da decisão judicial que foi elaborada por um órgão hierarquicamente superior. O Recurso Ordinário é regulamentado pelo artigo 895 da Consolidação das Leis do Trabalho (CLT)\cite{recursos}.
+
+\item \textbf{Agravo de petição}: Recurso utilizado para contestar decisões definitivas que aconteceram na fase execução, visando rediscutir a penhora e os cálculos da liquidação \cite{recursos}, \cite{agravopeticao}.
+
+\item \textbf{Recurso adesivo}: Acontece quando as duas partes envolvidas no processo vencem e são vencidas em um processo. Assim, se uma das partes discordar da decisão e entrar com um recurso, a outra parte, ainda que inicialmente tenha optado por não recorrer à 2ª instância dentro do prazo inicial, poderá protocolar recurso adesivo fora do prazo recursal original. É um recurso subordinário, uma vez que está condicionado à existência do recurso principal protocolado pela parte contrária \cite{recursos}
+
+\item \textbf{Agravo de instrumento}: é uma forma de contestar decisão que tenha negado que um recurso já protocolado subisse à instância superior, ou seja, a parte entrou com um recurso, o recurso foi negado dentro da mesma instância, então a parte entra com agravo de instrumento para que ainda assim o processo seja apreciado pela instância superior. O agravo de instrumento pode ser sobre o Agravo de petição ou sobre o Recurso Ordinário, o que caracteriza os documentos de Agravo de Instrumento em Agravo de Petição e o Agravo de Instrumento em Recurso Ordinário, respectivamente. \cite{agravoinstrumento}
+\end{itemize}
+
+    Assim, é natural que nestes documentos estejam contidas as informações relacionadas ao assunto que devem ser julgados pela 2ª instância, sendo portanto,  documentos apropriados para a identificação dos assuntos processuais. 
+    
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Entendimento dos dados}%
+
+Nesta etapa, busca-se entender os dados que serão trabalhados por meio de uma análise exploratória dos dados. 
+A partir de uma consulta nas bases de dados de 21 regionais, fez-se uma análise da quantidade de documentos dos referidos tipos em primeiro grau, e em segundo grau para o caso das petições iniciais. A \refFig{totalGeralDocumentos} mostra como estes documentos se distribuem. Nota-se que a maior parte de documentos são do tipo Recurso Ordinário. Por apresentar maior quantidade, este é o tipo de documento escolhido para realizar os experimentos iniciais nesta primeira iteração do projeto.
+
+
+\figuraBib{totalGeralDocumentos}{Quantitativo de documentos na 2ª instância}{}{totalGeralDocumentos}{width=.80\textwidth}%
+
+\myworries{//\textbf{DUVIDA:} como colocar na imagem que foi "elaborado pela autora"?}
+
+
+\myworries{//TODO: fazer agora a análise dos assuntos}
+
+
+\myworries{//TODO: analisar se vale trazer o percentual da quantidade de assuntos retificados retirada da analise do log (menos de 2\%)}
+
+
+A \refFig{totalGeralDocumentos}  mostrou um panorama geral da distribuição dos documentos, considerando todos os Tribunais Regionais disponíveis para consulta. Entretanto, há que se considerar a forma como o sistema PJe está implantado na Justiça do Trabalho. Uma vez que as bases de dados de cada Tribunal Regional são separadas umas das outras e não há qualquer tipo de integração, a análise dos documentos deve ser restrita à cada Região, onde cada uma fará a análise dos documentos que possui. Neste caso, para os experimentos a serem realizados neste projeto, escolhe-se a base de dados do Tribunal Regional do Trabalho da 3ª Região, que representa o estado de Minas Gerais. Escolhe-se este Tribunal devido à proximidade com dois magistrados deste órgão, que atualmente compõe o Grupo de Negócios da CNE, e poderão auxiliar no processo de desenvolvimento, atuando como especialistas. 
+
+\myworries{//TODO: fazer análise do TRT 3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Preparação dos dados}%
+
+De forma a se ter acesso ao conteúdo dos documentos, é preciso acessar o conteúdo de cada arquivo, que se encontra armazenado atualmente no bando Postgres. Parte destes documentos se encontram armazenados em texto puro, no formato HTML, enquanto outros se encontram armazenados em PDF. Atualmente, há um projeto em desenvolvimento que fará a inserção destes dados na ferramenta Solr, que é específica para o armazenamento de textos e recuperação da informação. Este projeto tem como artefato um extrator, que lê os dados no Postgres e insere no Solr. O extrator faz uso do Apache Tika para a extração do conteúdo dos documentos PDF não escaneados, e usa a ferramenta Tesseract para fazer o reconhecimento óptico dos caracteres (OCR) dos documentos escaneados. 
+
+Para que se tenha um bom resultado nos modelos preditivos, inicialmente faz-se necessária a aplicação de técnicas de pré-processamento de texto, que envolvem a remoção de palavras pouco significativas, chamadas de stop-words, a stemização, e a transformação de todo o texto em caixa baixa (ou caixa alta), para que não haja diferenças entre palavras iguais utilizando caracteres maiúsculos ou minúsculos. 
+
+\myworries{//TODO: adicionar dados da execução python.}
+
+
+%Enquanto o projeto não está concluído, fez-se uso do extrator para a extração dos documentos armazenados em HTML. Eles foram inseridos em uma instância do Solr local, de forma que se pôde acessar os documentos
+
+%De forma a se ter um primeiro contato com os dados, enquanto o projeto que fará a indexação dos documentos não está concluído, acessou-se diretamente a base do Postgres com a ferramenta Pentaho, e gerou-se um arquivo csv com o conteúdo de um subconjunto dos Recursos Ordinários gerados na base de 1º grau do TRT 3. 
+
+
+\subsection{Pré-processamento}%
+
+Através das bibliotecas scikit-learn, BeautifulSoup e nltk da linguagem Python, já foi possível fazer este trabalho inicial de remoção das marcações html, tokenização, stemização e remoção de stopwords.
+
+\myworries{//TODO: adicionar dados da execução python.}
+
+\subsection{Redução da dimensionalidade}%
+
+Como se estará trabalhando com textos jurídicos, e que apresentam uma grande quantidade de palavras, possivelmente será preciso adotar técnicas de redução da dimensionalidade de forma a reduzir tempo e custo na aplicação dos algoritmos. Assim, poderão ser utilizados os métodos Principal Component Analisys (PCA), que reduzir a quantidade de dados analisados ao escolher as features de maior relevância para um determinado problema, e o Singular Value Decomposition (SVD), que faz proveito das propriedades de matrizes alocando técnicas de fatoração para se chegar a um único vetor capaz de representar a matriz.
+
+
+\subsection{Remoção de ruído}%
+
+Além do pré processamento do texto em si, uma vez que se sabe que há um elevado índice de assuntos classificados erradamente, é possível que seja necessário tentar buscar os registros que foram classificados corretamente por meio da aplicação de técnicas de redução de ruído, tal como foi feito em \cite{tripadivisor}, onde se encontra o centroide de cada classe e busca-se apenas os elementos mais próximos aos centróides no conjunto de treinamento. Neste trabalho \cite{tripadivisor} , utilizou-se apenas o TF-IDF como métrica para avaliar a distância entre os elementos, mas pode-se testar algumas variações utilizando por exemplo os vetores do LDA ou SVD para a avaliação da distância. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Criação de modelos}%
+
+Escolhidos os registros com maior probabilidade de terem sido classificados corretamente, tem-se um conjunto de dados confiáveis para fazer o treinamento de modelos de aprendizagem supervisionada, podendo-se escolher dentre os algoritmos que tem apresentado o melhor resultado na literatura. Dentre os algoritmos utilizados para a classificação de textos levantados na seção 2, escolheu-se aplicar o SVM, Random Forest, Naïve Bayes e as Redes Neurais. 
+
+\myworries{//\textbf{IMPORTANTE}: acredito que alguns detes algorimos irão mudar, com a complementação da revisão bibliográfica voltada para o multilabel.}
+
+Considerando que este trabalho é a primeira iniciativa de aprendizagem de máquina, torna-se relevante que haja confiabilidade dos resultados apresentados, assim, a métrica precisão será priorizada. Serão avaliadas ainda o \textit{recall} e a \textit{F-Measure}.
+
+%\subsubsection{SVM}%
+
+%\subsubsection{Random Forest}%
+
+%\subsubsection{Naïve Bayes}%
+
+%\subsubsection{Redes Neurais}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Avaliação}%
+Para a validação dos documentos classificados pelo modelo gerado, conta-se com o apoio de especialistas da área que poderão ler os documentos e analisar se a categorização foi correta. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Ferramentas e Software de Apoio}%
+
+Para este trabalho, será utilizado o Pentaho para extração e cruzamento de dados, o Apache Tika e o Tesseract para a recuperação do conteúdo textual de documentos escaneados, o Solr para a indexação dos textos, a linguagem Python para o pré-processamento do texto e o H20 para a criação dos modelos.
+
+

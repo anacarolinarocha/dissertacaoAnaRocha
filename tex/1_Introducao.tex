@@ -1,192 +1,84 @@
-Este documento serve de exemplo da utilização da classe \unbcic\ para escrever
-um texto cujo objetivo é apresentar os resultados de um trabalho científico. A
-sequência de ideias apresentada deve fluir claramente, de modo que o leitor
-consiga compreender os principais conceitos e resultados apresentados, bem como
-encontrar informações sobre conceitos secundários.
+A partir da evolução dos meios de armazenagem e processamento de dados computacionais e sua consequente redução de custos, somados aos avanços do ramo da ciência da computação, atualmente vive-se um cenário com uma elevada quantidade de informação, sobretudo há um grande volume de informações não estruturadas armazenadas em formas de textos, imagens, vídeos ou áudios. Estima-se nos ambientes corporativos o montante de dados não estruturados represente de 85\% a 90\% de toda informação armazenada. 
+\gnramos{citação isolada?}\cite{reviewportugues}. Enquanto a quantidade de dados está crescendo constantemente, a capacidade humana de interpretá-los não acompanha esta evolução~\cite{thetextmininghandbook}. Assim, um novo ramo do conhecimento tem ganhado espaço e provido meios para se trabalhar com toda a informação que está sendo produzida. Este ramo é a ciência de dados,  uma área multidisciplinar que tenta entender dados complexos de forma sistemática e os problemas do negócio relacionados, aplicando conhecimentos da área de estatística, informática, computação, inteligência artificial, comunicação entre outros~\cite{artigodatascience}.
 
-%\url{http://www.escritacientifica.com/}
+Dentre as várias ferramentas utilizadas pela ciência de dados, tem-se a mineração de textos, que aplica técnicas específicas em conjuntos de palavras não estruturadas de forma a buscar informações ou padrões em um conjunto de palavras. A mineração de textos tenta resolver a crise da sobrecarga de informação ao combinar técnicas de mineração de dados, aprendizagem de máquina, processamento de linguagem natural, recuperação da informação e gerenciamento do conhecimento~\cite{thetextmininghandbook}.  
+
+Neste trabalho, aplica-se a ciência de dados no âmbito da Justiça do Trabalho (JT) de forma a tentar extrair informações de um conjunto de documentos associados a processos trabalhistas. O processo trabalhista é o instrumento pelo qual um cidadão (ou um conjunto de pessoas) requer formalmente ao Poder Judiciário que julgue determinada causa. Ele é composto por um conjunto de peças processuais que, segundo um rito processual e uma burocracia pré-estabelecida, possibilita ao juízo competente determinar uma sentença~\cite{processowiki}. 
+\myworries{aqui, como queria uma definição bem simples pra processo, eu citei a wiki. mas pergunto se isso é um problema.... eventualmente, poderia apenas remover a fonte?}
+\gnramos{Sim, wikipedia não é uma fonte de informação acadêmica (provavelmente lá há referência para uma)}
+
+Atualmente, os processos trabalhistas tramitam de forma eletrônica no sistema Processo Judicial Eletrônico  (PJe) da Justiça do Trabalho. O PJe é o sistema que permite a prática processual de advogados, procuradores,  magistrados, servidores e demais pessoas que participam de uma relação processual diretamente no sistema, permitindo a juntada dos documentos processuais ao dossiê do processo~\cite{pje}. Além dos documentos em si, o sistema faz uso de metadados que auxiliam na classificação do processo e dos documentos, entretanto, a maior parte da informação referente ao pedido processual e ao resultado final se encontra nos documentos elaborados pelos usuários, e há uma grande quantidade de documentos no acervo da justiça do trabalho, de forma que a leitura dos documentos se torna uma tarefa onerosa pois demanda muito tempo. 
+
+Dentre os metadados armazenados sobre os processos, tem-se o assunto processual, que identifica qual é o tema tratado naquele processo. Entretanto, um processo pode ser categorizado com mais de um assunto e mais de 700 assuntos estão disponíveis para o cadastro, assim, raramente esta informação é preenchida corretamente, uma vez que a identificação dos assuntos exige o conhecimento da tabela e o tempo do usuário para o correto cadastramento. Além disso, o seu preenchimento incorreto não tem impacto no resultado final da determinação dos magistrados. 
+
+
+\myworries{//TODO: confirmar o numero de assuntos}
+
+Assim, o objetivo deste trabalho é investigar se técnicas de mineração de textos , aplicadas em um conjunto de documentos processuais, são capazes de identificar o assunto principal do processo. Se esta informação estiver registrada corretamente no sistema, esta informação poderá ser utilizada com maior confiabilidade nas tarefas de triagem dos processos, identificação de demandas repetitivas que versam sobre mesmo assunto, pesquisa jurisprudencial e estatísticas processuais de maneira geral. 
+
+Dentre os maiores desafios da pesquisa, tem-se o fato de que serão trabalhados textos com vocabulário específico relacionado ao direito trabalhista, e, baseado em relatos dos usuários do sistema que recebem os processos, a maior parte dos processos apresentarão o assunto classificado erradamente, o que se coloca como um desafio para o aprendizado supervisionado. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Trabalho de Conclusão de Curso}%
-Todos os cursos do \acrfull{CIC} da \acrfull{UnB} exigem a produção de um
-texto científico como requisito para formação. %(veja \refAnexo{NormasGerais} para mais detalhes)
-As etapas desta monografia/dissertação/tese devem seguir o \emph{método científico}.
+\section{Justificativa}%
+Atualmente 731 assuntos diferentes podem ser utilizados para classificar os processos, o que torna a escolha dos assuntos corretos uma tarefa complexa para os usuários. Não só é preciso conhecer e entender bem a tabela, como é preciso encontrar as opções corretas dentre todos os assuntos processuais, o que se apresenta como um problema do paradoxo da escolha, onde o usuário, em face à muitas opções, fica paralisado e acaba por fazer escolhas de forma menos cautelosa e muitas vezes errada~\cite{paradoxofchoice}. Além  disso, conforme se pode let em~\cite{mislabeled_survey}, é comum que se tenha erros de classificação em dados inseridos pelos usuários. Como o preenchimento incorreto desta informação não causa prejuízo ao resultado final do processo, uma vez que trabalha-se primordialmente com o conteúdo dos textos redigidos, advogados e servidores raramente se dão ao trabalho de preencher a informação corretamente e completamente. Os processos trabalhistas normalmente tratam de vários assuntos, e apenas a indicação do assunto principal é obrigatória no momento do protocolo. Assim, atualmente, este dado, embora preenchido, apresenta baixa qualidade, e pode ser melhorado.
+
+\myworries{//TODO: confirmar o numero de assuntos}
+
+Além do trabalho de qualidade do dado em si, os estudos da área de jurimetria são fortemente impactados. A jurimetria é a disciplina que visa investigar o direito por meio da aplicação de métodos estatísticos. A partir desta atividade pode-se ter um panorama geral do comportamento do direito, o que serve para dar direcionamento na elaboração de leis, políticas públicas, a própria organização do acerto nos Varas Trabalhistas e Gabinetes capacitação de servidores e advogados, entre outros (\cite{jurimetriaingles},~\cite{jurimetriaportugues}). Se os dados armazenados não refletem a realidade, as estatísticas também serão consequentemente incorretas, o que pode levar a decisões inadequadas para o contexto real. Vários são os trabalhos que fazem uso destes dados. Nesta área podemos citar o sistema e-Gestão~\cite{leiegestao}, que fornece estatísticas sobre a atividade judicante na Justiça do Trabalho,  o Relatório Justiça em Números~\cite{leijusticaemnumeros},\cite{leijusticaemnumeros}, elaborado anualmente pelo Sistema de Estatística do Poder Judiciário (SIESPJ) ~\cite{leisiespj} para dar uma visão geral em números sobre o Poder Juduciário brasileiro, e reportagens publicadas em diversos sítios [[ACRECENTAR SÍTIOS]]
+
+Quanto ao aspecto negocial, a elevada quantidade de processos e documentos jurídicos a serem apreciados pelos servidores da justiça trabalhista traz lentidão ao tempo de tramitação do processo.  À cada documento peticionado pelos advogados em um processo, cabe uma apreciação e um retorno por parte dos tribunais, na forma de outro documento. A redação dos documentos por parte dos magistrados e servidores, quando não se trata de modelos de documentos comuns como despachos ou mandados, normalmente envolverá uma elaboração em relação ao contexto do processo e jurisprudência (conjunto de decisões sobre interpretações da lei) aplicada naquele tipo de demanda, envolvendo portanto uma pesquisa sobre documentos da mesma natureza que já foram redigidos em processos similares, ou seja, processos que trataram de um mesmo assunto. Isto é importante para que se tenha uma homogeneidade na forma de tratar os processos de maneira geral. 
+
+Assim, a correta classificação dos assuntos processuais pode auxiliar na busca de processos similares, reduzindo o tempo que os servidores levam para recuperar a informação que precisam para embasar a redação dos documentos em cada processo. Por exemplo, para que um servidor ou magistrado que trabalha na redação de votos em um gabinete possa elaborar um voto sobre processo que trate do assunto “Assédio moral”, ele precisará fazer um procedimento análogo à “revisão da literatura” no meio acadêmico, recorrendo a processos que já trataram deste tema para buscar leis, súmulas, acórdãos dentre outros elementos que foram utilizados na elaboração da decisão final de um magistrado. Isso não só facilita o trabalho da elaboração do documento mas auxilia a resguardar o princípio da segurança jurídica, que visa trazer estabilidade e previsibilidade das consequências das decisões emanadas pelos Tribunais~\cite{segurancajuridica}, o que tende a diminuir o ajuizamento de novas demandas para casos com fatos já julgados, o que, dentre outras benesses, reduz o congestionamento processual na Justiça Trabalhista, contribuindo para a redução do número de ações ajuizadas~\cite{carvalho_o_2017}.
+
+Em termos práticos, se hoje um servidor leva 2 horas para fazer uma pesquisa para encontrar os processos que trataram de “Assédio moral”, considerando que, o servidor da justiça do trabalho deve atuar em média com uma carga de 284 processos por ano por ano (entre pendentes e julgados)\cite{justicaemnumeros2017}, e esse tempo possa ser reduzido pela metade pela correta classificação dos assuntos, ganhar-se-ia 284 horas de trabalho do servidor, o que equivaleria a 40 dias de trabalho (em uma jornada de 7 horas diária), que poderiam ser utilizados em outra atividade ou outros processos.
+
+Outra tarefa que pode ser facilitada pelo processo de classificação automática é a triagem inicial, que acontece quando o processo chega no gabinete e precisa ser direcionado para a equipe que trabalha com aquele tipo de processo. Se ao chegar no gabinete o assunto do processo já estiver categorizado de forma automática e correta, o direcionamento do processo fica facilitado, poupando ao servidor que faz a triagem a leitura do inteiro teor da petição inicial ou do recurso, possibilitando até mesmo a criação de mecanismos automáticos para a distribuição dos processos. 
+
+Cita-se ainda como benefício deste trabalho a possível facilitação no processo de identificação de demandas repetitivas. Esta atividade ganhou relevância no âmbito da Justiça depois da publicação do novo Código do Processo Civil~\cite{novocpc}, que em seu Artigo 976 estabelece a instauração do processo de incidente de resolução de demandas repetitivas quando houver questões contenham controvérsia sobre uma mesma questão apresentando risco de ofensa à isonomia  e à segurança jurídica. A classificação correta dos assuntos pode auxiliar na identificação de demandas que tratam de um mesmo assunto, direcionando o usuário tanto na classificação de novos casos que versem sobre tema que já é tratado como uma demanda repetitiva, quanto na busca de processos já julgados que trataram sobre esta causa.
+
+
+Por fim, este trabalho está alinhado com a gestão estratégica do CSJT, atuando na melhoria contínua do processo de trabalho e se mostrando como uma inovação no Processo Judicial Eletrônico. Dentre os indicadores impactados pela classificação automática de assuntos processuais tem-se o Índice de Satisfação Interna com o Sistema do Processo Judicial Eletrônico e o Índice de Satisfação Externa com o Sistema do Processo Judicial Eletrônico~\cite{conselho_superior_da_justica_do_trabalho_glossario_2017}. Nesse sentido, o resultado deste estudo servirá de insumo para o desenvolvido do projeto Classificação de Temas do CSJT, que já tem Termo de Abertura de Projeto (TAP)(Veja \refApendice{TAP})aprovado pela Coordenação Nacional Executiva (CNE) do PJe para a implementação\footnote{Desde a assinatura do TAP, o escopo foi alterado. Seguem principais alterações: (1) a indexação dos textos do PJe foi extraída pra um outro projeto, que já se encontra em desenvolvimento e tem previsão de finalização em novembro de 2018; (2) ao invés de decisões judiciais, serão trabalhados os documentos recursais e petições iniciais que chegam à segunda instância com o objetivo de identificar os assuntos neste grau de jurisdição; (3) invés de trabalhar com os citados 'Temas', será utilizada a Tabela Processual Unificada de Assuntos do CNJ~\cite{tpucnj} acrescida dos assuntos da JT~\cite{tputst} } em 2019. A utilização de um algoritmo de mineração de textos que possa fazer uma categorização automática do tema traz um leque de possibilidades de tornar o PJe  um sistema inovador, que explora de forma inteligente os benefícios que a tecnologia pode trazer para os advogados, servidores e magistrados. 
+
+\myworries{//TODO: verificar se o assunto influenciaria na distribuição…. Entra na competencia? - JÁ PERGUNTEI AO RÔMULO}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Metodologia Científica}%
-Ciência (do Latim \emph{scientia}, traduzido como ``conhecimento'') é uma forma
-sistemática de produzir conhecimento (via método científico), ou o nome dado a
-estrutura organizada do conhecimento obtido.
+\section{Objetivos}%
+De forma a investigar aplicação de algoritmos de classificação de texto em documentos judiciais da justiça trabalhista, escolheu-se os documentos que dão entrada no protocolo de processos na 2ª instância.
 
-O método científico é um conjunto de regras básicas de como proceder para produzir
-conhecimento, criando algo novo ou corrigindo/incrementando conhecimentos
-pré-existentes. Consiste em juntar evidências empíricas verificáveis baseadas na
-observação sistemática e controlada, geralmente resultantes de experiências ou
-pesquisa de campo, e analisá-las logicamente.
+\myworries{//TODO: vai reduzir a quantidade de assuntos?}
 
-Esta ideia foi formalizada por Newton em sua obra \emph{Philosophiae Naturalis
-Principia Mathematica}~\cite{newton1833philosophiae} da seguinte forma:
+\subsection{Objetivos específicos}%
+
+Com o propósito de se alcançar o objetivo geral definido, se faz necessário que os seguintes objetivos específicos sejam atendidos:
 \begin{enumerate}
-	\item Não se deve admitir causas das coisas naturais além daquelas
-	que sejam verdadeiras e sejam suficientes para explicar seus fenômenos.
-	\item Efeitos naturais do mesmo gênero devem ser atribuídos as mesmas causas.
-	\item Características de corpos são consideradas universais.
-	\item Proposições deduzidas da observação de fenômenos são
-	consideradas corretas até que outro fenômeno mostre o contrário.
-\end{enumerate}%
+\item Investigar a aplicação de algoritmos de classificação em documentos de processo
+\item Comparar o desempenho de diferentes algoritmos neste domínio
+\item Verificar se o enriquecimento do modelo com metadados do processo trará melhora para os resultados.
+\item Disponibilizar um artefato de software que automatize o processo da escolha do melhor modelo dado um conjunto de documentos, com potencial utilização nos TRTs
+\end{enumerate}
 
-Uma abordagem para esta metodologia é seguir os seguintes passos:
-\begin{description}
-	\item[Caracterização do Problema:] Qual a pergunta a ser respondida? Quais
-informações/recursos necessários na investigação?
-	\item[Formulação da Hípotese:] Quais explicações possíveis para o que foi observado?
-	\item[Previsão:] Dadas explicações [corretas] para as observações, quais os
-	resultados previstos?
-	\item[Experimentos:] \ \\\vspace{-2em}
-		\begin{enumerate}
-			\item Execute testes [reproduzíveis] da hipótese, coletando dados.
-			\item Analise os dados.
-			\item Interprete os dados e tire conclusões:
-				\begin{itemize}
-				\item que comprovam a hipótese;
-				\item que invalidam a hipótese \emph{ou levam a uma nova hipótese}.
-				\end{itemize}
-		\end{enumerate}
-	\item[Documentação:] Registre e divulgue os resultados.
-	\item[Revisão de Resultados:] Validação dos resultados por outras pessoas
-	[capacitadas].
-\end{description}%
+\myworries{//DÚVIDA: o último está correto?}
 
-Geralmente se começa com a revisão sistemática, uma metodologia de pesquisa
-específica para juntar e avaliar material relevante a determinado tópico~\cite{Biolchini_2005_Systematicreviewin}.
-
-\subsection{Veja Também}
-\begin{itemize}
-	\item Google Acadêmico
-		\\\url{http://scholar.google.com.br/}%
-	\item ACM Digital Library
-		\\\url{http://dl.acm.org/}%
-	\item Portal \acrshort{CAPES}
-		\\\url{http://www.periodicos.capes.gov.br/}%
-	\item IEEE Xplore
-		\\\url{http://ieeexplore.ieee.org/Xplore/home.jsp}%
-	\item ScienceDirect
-		\\\url{http://www.sciencedirect.com/}%
-	\item Springer Link
-		\\\url{http://link.springer.com/}%
-\end{itemize}
-
-Para buscar referências, \emph{The DBLP Computer Science Bibliography}\footnote{\url{http://dblp.uni-trier.de/}}
-é um ótimo recurso. Veja o \refApendice{Apendice_Fichamento} para instruções
-sobre como organizar as informações de artigos científicos.
-
+\myworries{//DÚVIDA: preciso especificar aqui que é um problema de classificação multi-label?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\LaTeX}%
 
-\TeX\ é ``\emph{a typesetting system intended for the creation of beautiful books
- - and especially for books that contain a lot of mathematics}''~\cite{Knuth_1986_texbook},
- um sistema de tipografia muito utilizado na produção de textos técnicos devido
- a qualidade final, principalmente das fórmulas e símbolos matemáticos gerados.
+\section{Contribuições esperadas}
+Nesta dissertação, será feito um estudo de forma a dar uma explicação da estrutura organizacional da Justiça do Trabalho, da utilização do PJe pelos TRTs e dos aspectos mais relevantes em relação à tarefa de classificação de texto por meio de técnicas de mineração de dados. Serão apresentados ainda trabalhos relacionados publicados que tratam da classificação de textos. Além disso, será feita uma análise exploratória que permitirá identificar a distribuição de tipos de documentos e assuntos em segundo grau, bem como aspectos dos textos contidos nestes documentos. 
 
-\LaTeX\ é um conjunto de macros para facilitar o uso de \TeX~\cite{lamport_latex:_1994},
-cujos pacotes (a maioria centralizada na rede \acrshort{CTAN}~\cite{greenwade93}), oferecem
-inúmeras possibilidades. Este sistema tipográfico visa explorar as potencialidades
-da impressão digital, sem que o resultado seja alterado em função de diferenças
-entre plataformas/sistemas.
+O trabalho apresenta ainda os passos necessários para a preparação de um conjunto de textos do PJe para que possam ser utilizados nos algoritmos de classificação de textos, o resultado da aplicação desses algoritmos e um comparativo da performance de um conjunto algoritmos de classificação de texto aplicados a documentos judiciais trabalhistas. 
 
-Em uma publicação, um \emph{autor} entrega o texto a uma editor que define a
-formatação do documento (tamanho da fonte, largura de colunas, espaçamento, etc.)
-e passa as instruções (e o manuscrito) ao tipógrafo, que as executa. Neste processo,
-\LaTeX\ assume os papéis de editor e tipógrafo, mas por ser ``apenas'' um programa
-de computador, o autor deve prover algumas informações adicionais ~\cite{Oetiker_1995_notsoshort},
-geralmente por meio de marcações (comandos).
-
-Esta abordagem de linguagem de marcação (em que se indica como o texto deve ser
-formatado) é diferente da abordagem OQVVEOQVO (``o que você vê é o que você
-obtém\footnote{Do inglês WYSIWYG - ``What You See Is What You Get''.}'') de programas
-para edição de texto tradicionais (como MS Word, LibreOffice Write, etc.).
-Apesar destes programas serem extremamente úteis para gerar textos simples, que
-são a grande maioria dos documentos, eles geralmente não têm a capacidade de lidar
-corretamente com documentos complexos (como dissertações ou teses), conforme ilustrado
-na \refFig{latexvsword}.%
-
-\figuraBib{miktex}{\LaTeX\ vs MS Word}{pinteric_latex_2004}{latexvsword}{width=.45\textwidth}%
-
-Existem diversas discussões quanto ao uso de editores de texto\footnote{Por exemplo:
-\emph{Word Processors: Stupid and Inefficient} \url{http://ricardo.ecn.wfu.edu/~cottrell/wp.html}},
-não há um consenso quanto a melhor forma de se gerar um documento de qualidade,
-e a maioria das mídias científicas disponibiliza modelos para ambas.
-
-Mas pode-se dizer que \LaTeX\ é mais indicado para:
-\begin{itemize}
-	\item notação matemática;
-	\item referências cruzadas;
-	\item separação clara entre conteúdo e formatação.
-\end{itemize}
-
-Enquanto os editores tradicionais são indicados para:
-\begin{itemize}
-	\item edição colaborativa (são mais populares);
-	\item produção imediata (leve curva de aprendizado).
-\end{itemize}
-
-\subsection{Veja Também}
-\begin{itemize}
-	\item Introdução ao \LaTeX
-		\\\url{http://latexbr.blogspot.com.br/2010/04/introducao-ao-latex.html}
-	\item \LaTeX\ - A document preparation system
-		\\\url{http://www.latex-project.org/}
-	\item The \acrlong{CTAN}
-		\\\url{http://ctan.org}
-	\item \TeX Users Group
-		\\\url{http://tug.org}
-	\item \TeX\ - \LaTeX\ Stack Exchange
-		\\\url{http://tex.stackexchange.com}
-	\item \LaTeX\ Wikibook
-		\\\url{http://en.wikibooks.org/wiki/LaTeX}
-	\item write\LaTeX
-		\\\url{http://www.writelatex.com}
-\end{itemize}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Plágio}%
-O JusBrasil\footnote{\url{http://www.jusbrasil.com.br}} define plágio como
-``reprodução, total ou parcial, da propriedade intelectual de alguém, inculcando-se
-o criador da idéia ou da forma. Constitui crime contra a propriedade imaterial
-violar direito de autor de obra literária, científica ou artística.''
 
-
-A \acrfull{CEP} da Presidência da República decidiu  ``pela
-aplicação de sanção ética aos servidores públicos que incorrerem na prática de
-plágio"\footnote{\url{http://www.comissaodeetica.unb.br/index.php?view=article&id=8:plagio-academico}},
-e a \acrfull{CAPES} recomenda que se adote políticas de conscientização e informação
-sobre a propriedade intelectual, baseando-se na Proposição 2010.19.07379-01,
-referente ao plágio nas instituições de ensino\footnote{\url{https://www.capes.gov.br/images/stories/download/diversos/OrientacoesCapes_CombateAoPlagio.pdf}}.
-
-
-\subsection{Veja Também}
-\begin{itemize}
-	\item IEEE Plagiarism FAQ
-		\\\url{http://www.ieee.org/publications_standards/publications/rights/plagiarism_FAQ.html}
-	\item Relatório da Comissão de Integridade de Pesquisa do CNPq
-		\\\url{http://www.cnpq.br/web/guest/documentos-do-cic}
-\end{itemize}
-
-
-
-%\section{Normas CIC}
-% \href{http://monografias.cic.unb.br/dspace/normasGerais.pdf}{Política de Publicação de Monografias e Dissertações no Repositório Digital do CIC}%
-% \href{http://monografias.cic.unb.br/dspace/}{Repositório do Departamento de Ciência da Computação da UnB}
-
-% \href{http://bdm.bce.unb.br/}{Biblioteca Digital de Monografias de Graduação e Especialização}
+Esta trabalho está organizado da seguinte forma: Na Seção 2, é apresentada uma revisão da literatura, onde buscou-se encontrar trabalhos que trataram problemas parecidos; na Seção 3, aborda-se os principais conceitos teóricos necessários ao entendimento do trabalho; Seção 4 apresenta-se os resultados obtidos até o momento e na Seção 5 é apresentado o cronograma do projeto.
