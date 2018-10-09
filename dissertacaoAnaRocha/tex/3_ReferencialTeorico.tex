@@ -1,95 +1,136 @@
-    Neste capítulo, será apresentada a forma como a Justiça do Trabalho está organizada; o PJe, onde tramitam os processos judiciais trabalhistas; alguns conceitos sobre a classificação de textos; e o modelo de referência para desenvolvimento de atividade de mineração de dados conhecido como CRISP-DM. 
-\gnramos{li apenas a parte marcada com "dúvida"}%
+\label{cap:ReferencialTeorico}%
+Neste capítulo, será apresentada a forma como a Justiça do Trabalho está organizada; o PJe, onde tramitam os processos judiciais trabalhistas; alguns conceitos sobre a classificação de textos; e o modelo de referência para desenvolvimento de atividade de mineração de dados conhecido como CRISP-DM. 
 
-\section{Justiça do Trabalho}%
+\section{\label{sec:justicaDoTrabalho}Justiça do Trabalho}%
 
 O Poder Judiciário brasileiro é dividido em cinco esferas principais: a Justiça do Trabalho  trata das ações judiciais entre empregados e empregadores; a Justiça Eleitoral trata das questões relacionadas à  realização das eleições;  a Justiça Militar (Estadual e Federal)  julga os militares; e a Justiça Comum , que é dividida entre Estadual e Federal e lida com as demais questões. 
 
-Especificamente sobre a JT justiça é organizada em três graus ou instâncias de apreciação. A primeira delas é composta pelas Varas de Trabalho, onde atuam os juízes do trabalho. A competência destes órgãos julgadores é dada pela localização onde se prestou o trabalho (independentemente do local de contratação). Segundo o relatório Justiça em Números de 2017 \cite{justicaemnumeros2017}, ao final de 2016 existiam 1572 Varas de Trabalho. 
+Especificamente sobre a JT, temos que ela é organizada em três graus ou instâncias de apreciação. A primeira delas é composta pelas Varas de Trabalho, onde atuam os juízes do trabalho. A competência destes órgãos julgadores é dada pela localização onde se prestou o trabalho (independentemente do local de contratação). Segundo o relatório Justiça em Números de 2017 \cite{justicaemnumeros2017}, ao final de 2016 existiam 1572 Varas de Trabalho. 
 
-A segunda instância é composta por 24 Tribunais Regionais do Trabalho (TRT), onde os desembargadores julgam os recursos ordinários contrários às decisões providas nas Varas de Trabalho bem como outras ações de competência originárias deste grau. Os 26 estados brasileiros e o Distrito federal se dividem entrem as 24 regiões. Os TRTs são classificados pelo SIESPJ quanto ao porte, que leva em consideração diversos dados estatísticos relacionados a despesas, processos em trâmite, número de magistrados e servidores e trabalhadores auxiliares. Na \refFig{porteRegionais}, extraída do relatório Justiça em Números de 2017 \cite{justicaemnumeros2017}, pode-se analisar o porte de cada região. 
+A segunda instância é composta por 24 Tribunais Regionais do Trabalho, onde os desembargadores julgam os recursos contrários às decisões providas nas Varas de Trabalho bem como outras ações de competência originárias deste grau. Os 26 estados brasileiros e o Distrito Federal se dividem entrem as 24 regiões. Os TRTs são classificados pelo SIESPJ quanto ao porte, que leva em consideração diversos dados estatísticos relacionados a despesas, processos em trâmite, número de magistrados e servidores e trabalhadores auxiliares. Na \refFig{porteRegionais}, extraída do relatório Justiça em Números de 2017 \cite{justicaemnumeros2017}, pode-se analisar o porte de cada região. 
 
 \figuraBib{porteRegionais}{Porte dos Regionais}{justicaemnumeros2017}{porteRegionais}{width=.55\textwidth}%
 
 A última instância desta justiça é o Tribunal Superior do Trabalho (TST), que, como órgão máximo, atua como revisor das decisões de 1º ou 2º grau além de atuar nas causas de competência originária desta corte.  Sua função principal é a de uniformizar as decisões sobre ações trabalhistas de forma a consolidar a jurisprudência deste ramo do judiciário. O TST é composto por 27 ministros do trabalho.
-De forma a organizar e dar direcionamento para todos os ramos da justiça, em 2005 criou-se o Conselho Nacional da Justiça (CNJ), que tem atuação em todo o território brasileiro e tem a missão de desenvolver políticas judiciárias para promover a unidade e efetividade de todo o Poder Judiciário, buscando valores de justiça e paz social \cite{sitecnj}. Este órgão zela pela autonomia do Poder Judiciário, define o planejamento estratégico, planos de metas e programas de avaliação do Poder Judiciário, presta serviços aos cidadãos (recebe reclamações, petições,entre outros), define e avalia indicadores pertinentes à atividade jurisdicional, entre outros.   Assim, todas as justiças são regidas pelos atos normativos e recomendações do CNJ.      
 
-Além do CNJ, cada ramo da justiça tem o seu Conselho próprio. Assim, na JT foi criado o Conselho Superior da Justiça do Trabalho (CSJT), que exerce a supervisão administrativa, orçamentária, financeira e patrimonial da JT de primeiro e segundo graus. Além de atuar na supervisão, este órgão promove a integração e o desenvolvimento da JT de 1º e 2º graus. 
+De forma a organizar e dar direcionamento para todos os ramos da justiça, em 2005 criou-se o Conselho Nacional da Justiça (CNJ)\footnote{http://www.cnj.jus.br/sobre-o-cnj/quem-somos-visitas-e-contatos}, que tem atuação em todo o território brasileiro e tem a missão de desenvolver políticas judiciárias para promover a unidade e efetividade de todo o Poder Judiciário, buscando valores de justiça e paz social. Este órgão zela pela autonomia do Poder Judiciário, define o planejamento estratégico, planos de metas e programas de avaliação do Poder Judiciário, presta serviços aos cidadãos (recebe reclamações, petições,etc), define e avalia indicadores pertinentes à atividade jurisdicional, entre outros.   Assim, todas as justiças são regidas pelos atos normativos e recomendações do CNJ.      
 
-\myworries{//TODO: Falar um pouco mais sobre o CSJT.}
+Além do CNJ, cada ramo da justiça tem o seu Conselho próprio. Assim, na JT foi criado o Conselho Superior da Justiça do Trabalho (CSJT)\footnote{http://www.csjt.jus.br/missao-visao-valores}, que exerce a supervisão administrativa, orçamentária, financeira e patrimonial da JT de primeiro e segundo graus. Além de atuar na supervisão, este órgão promove a integração e o desenvolvimento da JT de 1º e 2º graus. 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Processo Judicial Eletrônico (PJe)}%
+\section{\label{sec:pje}Processo Judicial Eletrônico (PJe)}%
 
 Estabelecidos os órgãos competentes, os cidadãos que necessitam de julgamento em alguma causa recorrem à abertura dos processos judiciais. Conforme se pode ler em \cite{carvalho_o_2017}, o processo judicial é o canal pelo qual o Estado concretiza a prestação jurisdicional, ou seja, resolve a lide de forma imparcial, entregando às partes envolvidas a solução para o litígio. Atualmente, existe um esforço de informatização de todas as justiças, de forma a viabilizar que os processos jurídicos tramitem da forma eletrônica: \textit{``o que se busca com o processo eletrônico é evoluí-lo de tal forma a alcançar o denominado “i-processo”, em que elementos de inteligência artificial (uso de metadados e algoritmos) servem de ferramenta para auxílio da decisão judicial, notadamente ante a conexão do processo ao mundo virtual de informações.''} Ainda neste trabalho, o autor afirma que o processo eletrônico garante a lisura dos procedimentos envolvidos, além de promover o aumento da segurança jurídica e de viabilizar a rápida resposta do Judiciário.  
 
-Assim, em 2011, o PJe foi lançado pelo CNJ \cite{pjecnj}, e vários ramos da justiça já aderiram ao sistema desde então. De acordo com o relatório Justiça em Números 2017 \cite{justicaemnumeros2017}, observa-se que é crescente a quantidade de processos que tramitam em meio eletrônico.  Conforme se pode ler no Caderno do Pje, publicado pelo CNJ em 2016 \cite{cadernopje2016}, 54 Tribunais dos 90 existentes já haviam implantado o sistema até o momento da publicação do relatório.   
+Assim, em 2011, o PJe foi lançado pelo CNJ \footnote{http://www.cnj.jus.br/tecnologia-da-informacao/processo-judicial-eletronico-pje}, e vários ramos da justiça já aderiram ao sistema desde então. De acordo com o Relatório Justiça em Números 2017 \cite{justicaemnumeros2017}, observa-se que é crescente a quantidade de processos que tramitam em meio eletrônico.  Conforme se pode ler no Caderno do Pje, publicado pelo CNJ em 2016 \cite{cadernopje2016}, 54 Tribunais dos 90 existentes já haviam implantado o sistema até o momento da publicação do relatório.   
 
-Analisando-se os dados quantitativos de processo que estão disponíveis na página do TST \cite{estatisticatsttrt}, tem-se o cenário mostrado na \refFig{estatisticaGraus}. Enquanto na primeira instância a quantidade de processos recebidos anualmente até 2016 se posicionou entre 2 e 2,6 milhões aproximadamente , na segunda instância este intervalo foi de 600 mil a 1 milhão. Já na terceira instância, esse quantitativo esteve sempre abaixo de 500 mil. Estes dados são bastante expressivos no que se refere à quantidade de demanda em cada instância. Importante notar ainda uma queda repentina do quantitativo de processos a partir de 2017. Isso se deu pela publicação da nova versão do Código do Processo Civil\cite{novocpc}, que alterou várias disposições de forma a reduzir o número de litígios, uma vez que os Tribunais brasileiros se encontravam sobrecarregados de demandas.
-
-
-\figuraBib{estatisticaGraus}{Quantidade de processos por instância}{estatisticatsttrt}{estatisticaGraus}{width=1\textwidth}%
-
-\myworries{//DÚVIDA: Como dizer que a \refFig{estatisticaGraus} foi adaptada desta fonte \cite{estatisticatsttrt}?}
-\gnramos{não diga. não é referência bibliográfica, apenas indique o sítio como nota de rodapé.}
+Analisando-se os dados quantitativos de processo que estão disponíveis na página do TST \footnote{http://www.tst.jus.br/web/guest/tribunais-regionais-do-trabalho1}, tem-se o cenário mostrado na \refFig{estatisticaGraus}. Enquanto na primeira instância a quantidade de processos recebidos anualmente até 2016 se posicionou entre 2 e 2,6 milhões aproximadamente , na segunda instância este intervalo foi de 600 mil a 1 milhão. Já na terceira instância, esse quantitativo esteve sempre abaixo de 500 mil. Estes dados são bastante expressivos no que se refere à quantidade de demandas em cada instância. Importante notar ainda uma queda repentina do quantitativo de processos a partir de 2017. Isso se deu pela publicação da nova versão do Código do Processo Civil\cite{novocpc}, que alterou várias disposições de forma a reduzir o número de litígios, uma vez que os Tribunais brasileiros se encontravam sobrecarregados de demandas.
 
 
-No momento do lançamento do PJe, o CNJ distribuiu um sistema único, e cada ramo da justiça fez as alterações necessárias para que fossem atendidas as suas necessidades. Apesar da necessidade de   alterações, algumas informações não devem ser modificadas, uma vez que são estabelecidas pelo CNJ, que na tentativa promover a uniformização taxonômica e terminológica de classes processuais, movimentação, fases processuais e assuntos, criou as  Tabelas Processuais Unificadas do Poder Judiciário (TPUs), de forma que todos os novos processos devem ser criados seguindo esta padronização de nomenclatura \cite{tpucnj}.
+\figuraBib{estatisticaGraus}{Quantidade de processos por instância}{}{estatisticaGraus}{width=1\textwidth}%
 
-Baseado na TPU que define os assuntos processuais, o TST, que uniformiza as questões relacionadas à Justiça do Trabalho, acrescentou assuntos que entendeu serem necessários à este ramo da Justiça, conforme se pode ver em \cite{tputst}. O assunto processual se refere ao conteúdo, à temática, à matéria do processo. Outra definição feita pelo CNJ e revista pelo TST são os tipos de documento existentes que podem ser anexados a um processo. Estas duas informações serão utilizadas no escopo deste projeto. 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Distribuição do PJe}%
+No momento do lançamento do PJe, o CNJ distribuiu um sistema único, e cada ramo da justiça fez as alterações necessárias para que fossem atendidas as suas necessidades. Algumas informações foram padronizadas entre todas as justiças, com o objetivo de promover a  uniformização taxonômica e terminológica de classes processuais, movimentação e assuntos, criou as  Tabelas Processuais Unificadas do Poder Judiciário (TPUs), de forma que todos os novos processos devem ser criados seguindo esta padronização de nomenclatura.
 
-O CSJT, desde o primeiro momento em que o PJe foi aderido pela JT, tem a competência de desenvolver o sistema, de forma que é este o órgão que distribui a versão do PJe para todos os TRTs. Os TRTs por sua vez, recebem a versão do PJe e providenciam a infraestrutura necessária para que o sistema possa ser disponibilizado aos usuários. Atualmente, em cada TRT, há uma instalação do sistema para atender ao primeiro grau e uma para atender ao segundo, e são utilizadas duas bases de dados diferentes, uma para cada grau. Considerando 24 TRTs, com primeiro e segundo grau, e o TST, como terceiro grau, tem-se 49 bases de dados distintas. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\myworries{//TODO: adicionar imagem da infra}
+\subsection{\label{sec:distribuicaoPje}Distribuição do PJe}%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+O CSJT, desde o primeiro momento em que o PJe foi aderido pela JT, tem a competência de desenvolver o sistema, de forma que é este o órgão que distribui a versão do PJe para todos os TRTs e para o TST. Estes órgãos por sua vez, recebem a versão do PJe e providenciam a infraestrutura necessária para que o sistema possa ser disponibilizado aos usuários. Atualmente, em cada TRT, há uma instalação do sistema para atender ao primeiro grau e uma para atender ao segundo, e são utilizadas duas bases de dados diferentes, uma para cada grau. Considerando 24 TRTs, com primeiro e segundo grau, e o TST, como terceiro grau, tem-se 49 bases de dados distintas e independentes.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Classificação de textos}%
 
-A mineração de texto tem atuado na classificação da informação, extração de conhecimento  e Processamento de Linguagem Natural (PLN) em documentos não estruturados, e várias são as técnicas utilizadas nesta abordagem. Baseado nos trabalhos \cite{revisaotmana}, \cite{revisaotmdaniel} e \cite{briefreviewtm} pode-se entender as principais etapas do processo de classificação de textos, que é uma das tarefas da mineração de textos.  Neste trabalho aborda-se a classificação de texto, que é uma forma de aprendizado supervisionado onde, dado um conjunto de textos previamente classificados, constrói-se um modelo capaz de classificar novos textos.
-
-Assim, dado um conjunto de textos para os quais se quer criar um modelo de classificação, o primeiro passo é o pré-processamento dos dados. Nesta etapa, chamada de tokenização, remove-se as pontuações    e caracteres especiais substituindo-os por espaços,  é feita a normalização do texto em caixa baixa (ou caixa alta) e a remoção de marcações html (se houver). O conjunto final de palavras únicas formará o vocabulário que compõe o dicionário de palavras da coleção existente, e cada documento será representado pelo conjunto de palavras que o formam. 
-
-Assim, de forma a reduzir o tamanho do dicionário e a representação de cada documento, buscando-se reduzir a quantidade de dados a serem processados, algumas técnicas podem ser aplicadas. A primeira delas é uma filtragem, onde busca-se remover do texto as palavras que são muito frequentes e trazem pouco significado. Normalmente, para cada língua, tem-se um conjunto chamado \textit{stopwords}, formado por artigos, preposições e outros, que é removido do texto em análise. Esse conjunto pode ser enriquecido por palavras específicas do domínio que também são muito recorrentes e pouco significativas. Depois, pode-se normalizar o texto de forma a remover variações morfológicas das palavras. Isso é feito por meio da lematização ou stemização. Na lematização, busca-se transformar verbos conjugados para a forma infinitiva e palavras no plural para o singular. Entretanto, para aplicar esta técnica, é preciso reconhecer a classe de cada palavra, o que envolve um passo a mais de reconhecimento de parte do discurso, que é um processo demorado e muitas vezes suscetível a erros. Assim, de forma mais simples, aplica-se a técnica de stemização, que faz uma análise mais generalizada para todas as palavras (independente da classe), removendo os sufixos das palavras mantendo apenas a sua raiz, reduzindo-se a variabilidade das terminologias. 
-
-Feito isso, pode-se ainda recorrer à diferentes formas de representação do conjunto de palavras. Cada palavra pode ser representada individualmente ou pode-se ainda unir palavras compostas formando um conjunto de 2 ou mais palavras (n-gramas). Outra opção é o que se chama de \textit{word embeddings}, que tenta representar significado das palavras em vetores de tamanho fixo.  Cada unidade a ser representada representa uma característica do documento, termo comumente chamado de \textit{feature} na literatura.
-
-Depois disso, preocupa-se com a melhor forma de representar os documentos.  De maneira a reduzir a complexidade da representação dos dados, converte-se o conjunto de \textit{features} de cada documento em vetores numéricos representados em um Modelo de Espaço Vetorial (VSM), onde cada documento d  pertencente à coleção de Documentos \textit{D} é representado em um espaço m-dimensional onde \textit{m} representa a quantidade \textit{features} \textit{t} existentes na coleção. O vetor \textit{w(d)} que representa o documento \textit{d} é dado por \textit{w(d) = \{x(d,t1), x(d,t2),....,x(d,tn)\}}, onde \textit{x} representa a função que irá calcular a frequência de cada palavras. Há vários métodos que calculam a frequência das palavras, sendo os mais utilizadas o Bag of Words (BOW), que calcula a frequência em cada documento, e ainda o  Tf-idf e BM25, que buscam encontrar a frequência relativa da palavra em relação à toda a coleção de documentos, levando em consideração a quantidade de documentos que contém cada palavra.
-
-\myworries{//TODO FUTURO: explicar tf-idf e BM25}
+A mineração de texto tem atuado na classificação da informação, extração de conhecimento  e Processamento de Linguagem Natural (PLN) em documentos não estruturados, e várias são as técnicas utilizadas nesta abordagem. Baseado nos trabalhos \cite{revisaotmana}, \cite{revisaotmdaniel} e \cite{briefreviewtm} pode-se entender as principais etapas do processo de classificação de textos, que é uma das tarefas da mineração de textos de aprendizado supervisionado onde, dado um conjunto de textos previamente classificados, constrói-se um modelo capaz de classificar novos textos.
 
 
-O próximo passo na redução da dimensionalidade trata da projeção de \textit{features}, que busca projetar os dados em uma outra dimensão de menor complexidade ou que melhor que ajuste ao problema. Dentre os métodos mais utilizados nesta tarefa tem-se o Latent Dirichlet Allocation (LDA), Principal Component Analysis (PCA) , Latent Semantic Indexing (LSI)  e o Singular Value Decomposition (SVD) . 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Pré-processamento do texto}
 
-Uma vez processado o texto, faz-se uso dos algoritmos de aprendizagem de máquina para a classificação de textos. Dentre os tipos de classificação possÍveis, cita-se duas grandes classes: a classificaçao binária, onde uma classe pode assumir apenas dois valores distintos, e a classificaçao multiclasse, onde ha varios valores possíveis dentro de uma classe. Os dados podem receber apenas uma classe, ou ainda várias classes, onde tem-se um problema de classificação multirrótulo. 
+O primeiro passo é o pré-processamento dos dados. Nesta etapa, aplica-se o processo chamado de tokenização, onde remove-se as pontuações e caracteres especiais substituindo-os por espaços, restando apenas palavras, chamadas de \textit{tokens}. Em seguida,  é feita a normalização do texto em caixa baixa (ou caixa alta) e a remoção de marcações html (se houver). O conjunto final de palavras únicas formará o vocabulário que compõe o dicionário de palavras da coleção existente, e cada documento será representado pelo conjunto de palavras que o formam. 
 
-Dentre os 5 algoritmos que tem sido mais frequentemente utilizados na tarefa de classificação de textos na língua portuguesa, tem-se as Máquinas de Vetores de Suporte (SVM), Naïve Bayes (NB), árvores de decisão, redes neurais artificiais e métodos que avaliam os vizinhos mais próximos. Dentre as métricas mais  utilizadas tem-se a precisão, \textit{recall} e \textit{F-Measure} \cite{reviewportugues}.
+De forma a reduzir o tamanho do dicionário e a representação de cada documento, buscando-se reduzir a quantidade de dados a serem processados, algumas técnicas podem ser aplicadas. A primeira delas é uma filtragem, onde busca-se remover do texto as palavras que são muito frequentes e trazem pouco significado. Normalmente, para cada língua, tem-se um conjunto chamado \textit{stopwords}, formado por artigos, preposições e outros, que é removido do texto em análise. Esse conjunto pode ser enriquecido por palavras específicas do domínio que também são muito recorrentes e pouco significativas. Depois, dentre as técnicas mais utilizadas, pode-se normalizar o texto de forma a remover variações morfológicas das palavras. Isso é feito por meio da lematização ou stemização. Na lematização, busca-se transformar verbos conjugados para a forma infinitiva e palavras no plural para o singular. Entretanto, para aplicar esta técnica, é preciso reconhecer a classe de cada palavra, o que envolve um passo a mais de reconhecimento de parte do discurso, que é um processo demorado e muitas vezes suscetível a erros. Assim, de forma mais simples, aplica-se a técnica de stemização, que faz uma análise mais generalizada para todas as palavras (independente da classe), removendo os sufixos das palavras mantendo apenas a sua raiz, reduzindo-se a variabilidade das terminologias. 
 
-\subsubsection{Support Vector Machines (SVM)}
-\myworries{//TODO: Explicar algoritmo}
-%\cite{cortes_support-vector_1995}
-\subsubsection{Naive Bayes}
-\myworries{//TODO: Explicar algoritmo}
-\subsubsection{Árvores de Decisão}
-\myworries{//TODO: Explicar algoritmo}
-\subsubsection{kNN}
-\myworries{//TODO: Explicar algoritmo}
+Feito isso, pode-se ainda recorrer à diferentes formas de representação do conjunto de palavras. Cada palavra pode ser representada individualmente ou pode-se ainda unir palavras compostas formando um conjunto de 2 ou mais palavras (n-gramas). Cada unidade a ser representada é uma característica do documento, termo comumente chamado de \textit{feature} na literatura.
 
-\myworries{//TODO: Explicar métodos de redução da dimensionalidade}
+Depois disso, preocupa-se com a melhor forma de representar os documentos.  De maneira a reduzir a complexidade da representação dos dados, converte-se o conjunto de \textit{features} de cada documento em vetores numéricos representados em um Modelo de Espaço Vetorial (VSM), onde cada documento \textit{d } pertencente à coleção de Documentos \textit{D} é representado em um espaço\textit{ m}-dimensional onde \textit{m} representa a quantidade \textit{features} \textit{t} existentes na coleção. O vetor \textit{w(d)} que representa o documento \textit{d} é dado por \textit{w(d) = \{x(d,t1), x(d,t2),....,x(d,tn)\}}, onde \textit{x} representa a função que irá calcular a frequência de cada palavras. Há vários métodos que calculam a frequência das palavras, sendo os mais utilizadas o \textit{Bag of Words} (BOW), que calcula a frequência em cada documento, e ainda o  Tf-idf e BM25, que buscam encontrar a frequência relativa da palavra em relação à toda a coleção de documentos, levando em consideração a quantidade de documentos que contém cada palavra.  Outra opção distinta é o que se chama de \textit{word embeddings}, que tenta analisar o contexto em que as palavras são utilizadas e representar seu significado em vetores de tamanho fixo. 
 
-\myworries{//TODO: explicar as métrica de avaliação, cobrir macro e micro métricas (contexto multi-label)}
+O próximo passo na redução da dimensionalidade trata da projeção de \textit{features}, que busca projetar os dados em uma outra dimensão de menor complexidade ou que melhor se ajuste ao problema. Citando-se os métodos mais utilizados neste propósito, tem-se o LDA\cite{lda}, que encontra os principais tópicos de um texto, baseado na probabilidade de cada palavra pertencer a um tópico, e na probabilidade de um documento conter determinado tópico. Já o PCA \cite{pca} tenta encontrar quais são as \textit{features} que explicam melhor os dados por meio da análise dos componentes principais, removendo aquelas que são irrelevantes para a identificação das classes. Normalmente o PCA irá gerar novas features que são uma combinação das \textit{features} existentes inicialmente. Já o SVD \cite{svd} é uma técnica de álgebra linear que faz a fatoração de matrizes e que consegue reduzir uma matriz de alta dimensionalidade em uma matriz de menor tamanho. 
 
-\myworries{//\textbf{IMPORTANTE}: acredito que alguns detes algorimos irão mudar, com a complementação da revisão bibliográfica voltada para o multilabel.}
-\gnramos{talvez. mas é mais importante apresentar algo fechado para qualificação que se preocupar muito com isso. Não são necessários muitos detalhes dos algoritmos.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Indução de modelos de classificação}
+
+Uma vez processado o texto, faz-se uso dos algoritmos de aprendizagem de máquina para a classificação de textos. A tarefa de classificação da informação é um tipo de aprendizado supervisionado, onde tem-se um conjunto de dados previamente rotulados, e a máquina é capaz de aprender com essa informação como classificar novos dados não rotulados. Entre os tipos de classificação possíveis, cita-se duas grandes classes: a classificação binária, onde uma classe pode assumir apenas dois valores distintos, e a classificação de múltiplas classes, onde ha vários valores possíveis dentro de uma classe. Além disso, os dados podem receber apenas uma classe, ou ainda várias classes, onde tem-se um problema de classificação multirrótulo. 
+
+Conforme se pode ler em \cite{silva_introducao_2016}, os algoritmos de classificação podem ser divididos em cinco tipos diferentes: os baseados em conhecimento, que operam por meio de um conjunto de regras utilizadas para atribuir a classe de um registros;os baseados em árvore, com um conjunto de regras organizado em árvores onde o nó raiz e os nós intermediários testam atributos dos dados, os ramos representam os resultados e os nós folhas são os rótulos das classes; os conexionistas, onde nós com diversos tipos de testes são organizados em uma forma específica de grafos; os baseados em distância, onde um registro assume a classe dos registros rotulados que se encontram mais próximos; os baseados em função, que possuem funções pré-definidas e tem os parâmetros ajustados durante um processo de treinamento; e os probabilísticos, que encontram a probabilidade de um objeto pertencer à determinada classe. São exemplos de algoritmos de classificação: Máquinas de Vetores de Suporte (SVM), \textit{Random Forest}, Naïve Bayes e as Redes Neurais.
+
+As Máquinas de Vetores de Suporte \cite{svm}, comumente referidas por SVM, mapeiam os registros em um espeaço \textit{n-}dimensional, onde cada registro será representado por um vetor de \textit{n} posições. Depois, tenta-se encontrar um hiperplano neste espaço que seja capaz de separar as classes dos objetos, de forma que a distância do hiperplano à cada ponto de cada classe seja a maior possível. Os pontos que se encontram mais próximos do hiperplano de separação dos dados são chamados de vetores de suporte. Na \refFig{svm}, é possível encontrar um hiperplano bidimensional que separa um conjunto do outro. Os vetores suporte se encontram destacados.
+
+\figuraBib{SVM}{Máquinas de Vetores de Suporte}{}{svm}{width=0.65\textwidth}%
+
+O algoritmo \textit{Random Forest} cria uma conjunto (também chamado de floresta ou \textit{ensemble}) de Árvores de Decisão, que são algoritmos baseados em árvore, e depois, com uma técnica chamada \textit{bagging}, combina o resultado de todas as árvores geradas de forma a identificar a classe final. Este algoritmo traz certa aleatoriedade ao modelo uma vez que, ao construir as árvores, os atributos que irão compor cada nó são escolhidos aleatoriamente, o que cria um conjunto mais diverso de árvores. Além disso, o algoritmo trabalha com árvores compostas de um subconjunto de atributos, o que gera árvores menores. Estas duas características fazem com que as chances de sobreajuste do modelo sejam menores do que as chances de sobreajuste de uma única árvore de decisão. \cite{randomforests}.
+
+O algoritmo Naïve Bayes \cite{silva_introducao_2016} é do tipo probabilístico, e é um classificador estatístico baseado no Teorema de Bayes \cite{bussab_estatistica_2017} com o objetivo de identificar a probabilidade de que um dado pertença a uma determinada classe. Esse algoritmo assume que o valor de um atributo em uma determinada classe independe do valor dos demais atributos, de forma a simplificar os cálculos. Considerando \textit{x} um objeto não rotulado, e H a hipótese de que esse objeto pertença a uma classe C, dada pela probabilidade P(H), quer-se identificar P(H|\textit{x}), ou seja, a probabilidade de \textit{x }pertencer à classe C.  O Teorema está descrito na Fórmula \ref{eq:teoremaDeBayes}, onde P(\textit{x}) é a probabilidade do objeto analisado ser o objeto \textit{x}.
+
+\begin{equation}\label{eq:teoremaDeBayes}
+P(H|\textit{x}) = \frac{P(\textit{x}|H)P(H)}{P(\textit{x})}
+\end{equation}
+
+
+Já as Redes Neurais \cite{redesNeurais} são um agregado de funções matemáticas organizados em forma de um grafo direcionado, que recebem como entrada um conjunto de valores numéricos e produz como saída outro conjunto de valores numéricos. Uma das formas mais comuns desta rede são as redes Perceptrons de Múltiplas Camadas (MLP). Nesta rede,cada nó no grafo é chamado de perceptron, e tem dentro de si uma função matemática de ativação, que transforma os dados de entrada em novos valores. A ligação entre cada perceptron recebe um peso, que multiplica os valores de saída de cada perceptron. Os perceptrons normalmente estão organizados com camadas, conforme se pode ver na \refFig{redeNeural}. Ao final, compara-se o valor final da rede neural com o valor esperado, e a diferença entre esses valores é o erro da rede. A ideia então é que se possa ajustar os parâmetros das funções de ativação e os pesos das conexões de forma a minimizar o erro final. Uma das formas de se ajustar estes parâmetros é a retropropagação (\textit{backpropagation}), onde o erro encontrado é propagado para os perceptrons das camadas anteriores como forma de fazer a calibragem correta doa valores dos pesos e funções.
+
+\figuraBib{RedeNeural}{Rede Neural}{}{redeNeural}{width=0.5\textwidth}%
+
+Importante mencionar que as redes neurais podem ser utilizadas também em uma etapa prévia à modelagem, com o objetivo de gerar uma representação das palavras. Essa é a técnica de\textit{ word embedding}, que transforma palavras em vetores de forma que se analisa o contexto de cada uma das palavras de acordo com as palavras mais próximas, e tenta representar a sua relação com as demais, baseado na proximidade de ocorrência, o que acaba por trazer uma informação semântica para os vetores de palavra. Para tal, é utilizado um tipo específico de rede neural, chamado de \textit{autoencoder}, onde, dada uma entrada, retorna-se o mesmo valor na saída, mas com uma forma de representação diferente. Assim, para a criação dos vetores de palavras, a rede neural recebe a palavra a ser codificada juntamente com um conjunto de palavras que ocorreram antes e depois, o que chamamos de janela de contexto, e representa-se este conjunto em um vetor que capta a distância das palavras. Uma das formas de se fazer isso é pelo algoritmo \textit{word2vec}. \cite{word2vec}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Avaliação dos modelos}
+
+Quanto às métricas que serão utilizadas, tem-se a precisão, revocação (\textit{recall}) e \textit{F-Measure}. Essas métricas levam em consideração algumas métricas básicas relacionadas à avaliação dos modelos. Estas métricas básicas são definidas abaixo:
+\begin{itemize}
+\item\textbf{ Verdadeiro Positivo (VP):} É a quantidade de registros classificados como positivos que realmente são da classe positiva.
+\item \textbf{Verdadeiro Negativo (VN): }É a quantidade de registros classificados como negativos que realmente são da classe negativa.
+\item \textbf{Falso Positivo (FP):} É a quantidade de registros classificados como positivos que na verdade são da classe negativa.
+\item \textbf{Falso Negativo (FN):} É a quantidade de registros classificados como negativos que na verdade são da classe positiva.
+\end{itemize}
+ Uma das formas mais utilizadas para se ter uma ideia geral do desempenho do modelo é construindo uma matriz de confusão, onde mostra-se cada um destes valores. A  \refTab{matrizConfusao}  apresenta um modelo desta matriz, baseado no exemplo em \cite{silva_introducao_2016}. Foi utilizada uma matriz de classificação binária de forma a facilitar o entendimento.
+ \begin{table}[]
+\centering
+\caption{Matriz de Confusão}
+\label{matrizConfusao}
+\begin{tabular}{|c|c|c|c|l}
+\cline{1-4}
+\multicolumn{2}{|c|}{\multirow{2}{*}{}}     & \multicolumn{2}{c|}{Classe Predita} &  \\ \cline{3-4}
+\multicolumn{2}{|c|}{}                      & Positiva         & Negativa         &  \\ \cline{1-4}
+\multirow{2}{*}{Classe original} & Positiva & VP               & FN               &  \\ \cline{2-4}
+                                 & Negativa & FP               & VN               &  \\ \cline{1-4}
+\end{tabular}
+\end{table}
+
+A partir desta tabela, extraem-se algumas métricas. Dentre elas, tem-se a precisão, que mede a quantidade de itens recuperados que são relevantes, ou seja, dentre todos os recuperados, quais eram positivos; enquanto a revocação mede a a quantidade de itens relevantes que são recuperados, ou seja, dentre todos os itens positivos existentes, quantos foram encontrados. As fórmulas para estas medidas em função das métricas base são dadas pelas equações \ref{eq:precisao} e \ref{eq:revocacao}.
+
+\begin{equation}\label{eq:precisao}
+Precisão = \frac{VP}{FP+VP}
+\end{equation}
+
+\begin{equation}\label{eq:revocacao}
+Revocação = \frac{VP}{FN+VP}
+\end{equation}
+
+Outra medida muito utilizada, que tenta equilibrar os valores de precisão e revocação, é a \textit{F-measure}, representada na equação \ref{eq:fmeasure}
+
+\begin{equation}\label{eq:fmeasure}
+\textit{F-measure} = \frac{2 X Precisão X Revocação}{(Precisão + Revocação)}
+\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -97,11 +138,11 @@ Dentre os 5 algoritmos que tem sido mais frequentemente utilizados na tarefa de 
 
 \section{Modelo CRISP-DM}%
 
-Este trabalho seguirá as etapas do modelo Cross Industry Standard Process for Data Mining (CRISP-DM) \cite{crispdm}, que foi estabelecido com o objetivo de definir as 6 etapas principais da mineração de dados, que podem ocorrer em ciclos de interação para o sucessivo aperfeiçoamento da solução. Na \refFig{crispdm} é possível identificar como estas etapas estão organizadas. 
+Este trabalho seguirá as etapas do modelo \textit{Cross Industry Standard Process for Data Mining} (CRISP-DM) \cite{crispdm}, que foi estabelecido com o objetivo de definir as 6 etapas principais da mineração de dados, que podem ocorrer em ciclos de interação para o sucessivo aperfeiçoamento da solução. Na \refFig{crispdm} é possível identificar como estas etapas estão organizadas. 
 
 \figuraBib{crispdm}{Modelo CRISP-DM}{crispdm}{crispdm}{width=.80\textwidth}%
 
-    Na primeira etapa, chamada a de Entendimento do Negócio \textit{(Bisiness Understanding)}, busca-se entender o objetivo do trabalho, quais são os principais conceitos negociais e processos negociais envolvidos, entre outros. Esta etapa poderá ser revisitada sempre que se concluir um ciclo do CRISP-DM com o objetivo de validar o trabalho realizado. 
+    Na primeira etapa, chamada a de Entendimento do Negócio \textit{(Business Understanding)}, busca-se entender o objetivo do trabalho, quais são os principais conceitos negociais e processos negociais envolvidos, entre outros. Esta etapa poderá ser revisitada sempre que se concluir um ciclo do CRISP-DM com o objetivo de validar o trabalho realizado. 
     
 A segunda etapa trata do Entendimento dos Dados \textit{(Data Understanding)}, onde se estuda as diferentes formas de abordar o problema negocial com os dados disponíveis. Nesta etapa é comum a aplicação de análises estatísticas e construção de hipóteses. A qualidade do dado é analisada com cuidado para que se possa verificar a confiabilidade das informações. 
 
@@ -109,6 +150,6 @@ A terceira etapa trata da Preparação dos Dados \textit{(Data Preparation)}, on
 
 De posse do conjunto de dados trabalhados, passa-se à quarta etapa \textit{(Modeling)}, que constrói o modelo de mineração e dados. Nesta etapa escolhe-se os métodos a serem utilizados, ajusta-se os parâmetros da maneira mais adequada e cria-se um modelo a partir de um subconjunto de dados. 
 
-Uma vez criado o modelo, é preciso avalia-lo. Assim, a quinta etapa \textit{(Evaluation) }faz-se simulações do modelo com conjuntos de dados desconhecidos de forma a medir seu desempenho. A métricas mais adequadas ao contexto são escolhidas e aferidas. 
+Uma vez criado o modelo, é preciso avalia-lo. Assim, na quinta etapa \textit{(Evaluation) }faz-se simulações do modelo com conjuntos de dados desconhecidos de forma a medir seu desempenho. A métricas mais adequadas ao contexto são escolhidas e aferidas, reavalia-se os as decisões tomadas ao longo do projeto. A etapa de avaliação envolve também uma avaliação negocial dos resultados obtidos.
 
 Uma vez que o modelo é aprovado, passa-se à sexta e última fase \textit{(Deployment)}, que faz a implantação do modelo. Uma vez que ele se encontra em um ambiente de produção, é importante que haja uma constante monitoração para verificar a necessidade de possíveis ajustes. Caso o modelo construído não tenha sido aprovado, retorna-se à fase inicial de entendimento do negócio para que se possa identificar ajustes a serem feitos no modelo, e o ciclo se reinicia. 
